@@ -1,0 +1,8 @@
+<script type="text/template" id="beer-list-item-template">
+	<input type="text">
+
+  <%% collection.each(function(beer){  %>
+    <li><%%= beer.get("name") %></li>
+  <%% }) %>
+
+</script>
