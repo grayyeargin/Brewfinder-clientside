@@ -1,10 +1,19 @@
 <script type="text/template" id="beer-show-template">
 
-	<img src="<%%= image %>" alt="">
-	<h1><%%= name %></h1>
-	<h3>Brewery: <%%= brewery_id %></h3>
-	<p><i><%%= style %></i></p>
-	<p>ABV: <%%= abv %></p>
+	<div class="sticky-beer-background">
+		<div class="profile-image" style="background-image: url(<%%= image %>)"></div>
+		<h1><%%= name %></h1></br>
+		<span class="brewery-location"><i><%%= brewery_name %></i></span>
+		<p>Style: <i><%%= style %></i></p>
+		<p>ABV: <%%= abv %></p>
+	</div>
+
+	<div class="margin-container">
+	<%% if (description) {%>
+		<h2>Description</h2>
+		<p><%%= description %></p>
+	<%% } %>
+	</div>
 
 
 </script>

@@ -1,0 +1,438 @@
+html { 
+  /*font-family: 'Lato', sans-serif;*/
+}
+
+body {
+	background-color: white;
+	font-family: 'Lato', sans-serif;
+}
+
+.nav-container{
+	width: 1100px;
+	margin: 0 auto;
+	height: 75px;
+}
+
+
+
+.nav-container .home-logo {
+	float: left;
+	padding-top: 0;
+	width: 250px;
+}
+
+.nav-container button{
+	margin-bottom: 8px;
+}
+
+.nav-container .search-form{
+	top: 5px;
+	right: 20px;
+}
+
+
+.nav-container ul {
+	/*margin: 0;*/
+	padding-left: 0;
+	margin: 0;
+	margin-top: 10px;
+	margin-right: 20%;
+	display: inline-block;
+}
+
+.nav-container li {
+	display: inline-block;
+	margin-right: 20px;
+	padding: 10px 20px;
+	border: 1px solid #ecf0f1;
+	border-radius: 5px;
+	transition: background-color .5s ease-in-out;
+}
+
+.nav-container li:hover{
+	background-color: #2ecc71;
+}
+
+
+/*Ian Lunn CSS Hover*/
+.glow {
+  display: inline-block;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.glow:hover, .glow:focus, .glow:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.grow-rotate {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.grow-rotate:hover, .grow-rotate:focus, .grow-rotate:active {
+  -webkit-transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(4deg);
+}
+
+
+
+
+
+.brew-container{
+	margin-top: 10px;
+	margin: 10px auto;
+	background-color: white;
+	padding: 0;
+}
+
+.sticky-background{
+	background-image: url('/images/beer_taps1.png');
+	background-size: cover;
+	height: 500px;
+	background-position: center center;
+	background-attachment: fixed;
+	box-shadow: inset 0em 0em 1em #111;
+	color: white;
+}
+
+.sticky-brewery-background{
+	background-image: url('/images/brewery_show.png');
+	background-size: cover;
+	height: 300px;
+	background-position: center center;
+	background-attachment: fixed;
+	box-shadow: inset 0em 0em 1em #111;
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.sticky-beer-background{
+	background-image: url('/images/beer_show_bar.png');
+	background-size: cover;
+	height: 400px;
+	background-position: center center;
+	background-attachment: fixed;
+	box-shadow: inset 0em 0em 1em #111;
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.minimum-height{
+	min-height: 1000px;
+	padding-top: 100px;	
+}
+
+.sticky-brewery-background h1{
+	margin-bottom: 2px;
+}
+
+
+.sticky-background h1:nth-child(1){
+	padding-top: 200px;
+}
+
+nav{
+	text-align: center;
+	height: 100px;
+}
+
+nav form{
+	position: absolute;
+	top: 40px;
+	right: 50px;
+}
+
+.home-logo{
+	padding-top: 15px;
+	width: 350px;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.map_wrapper{
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#map {
+	width: 960px;
+	height: 500px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+
+.brew-container h1{
+	text-align: center;
+
+}
+
+#beer-button{
+	background: url('http://www.runnersworld.com/sites/default/files/styles/rw_slideshowmax/public/beer1.jpg?itok=lN5FpPwt')center;
+	height: 100px;
+	width: 200px;
+	margin: 10px 25px 10px auto;
+
+}
+
+#brewery-button{
+	background: url('http://www.runnersworld.com/sites/default/files/styles/rw_slideshowmax/public/beer1.jpg?itok=lN5FpPwt')center;
+	height: 100px;
+	width: 200px;
+	margin: 10px auto 10px 25px;
+
+}
+
+.brewery-profile-img {
+	border: 3px solid white;
+	margin: 10px;
+
+}
+
+.brewery-location{
+	font-size: 22px;
+	margin-bottom: 3px;
+}
+
+.sticky-beer-background h1{
+	margin-bottom: 0px;
+}
+
+.beers-table{
+	margin-top: 20px;
+	margin-left: 10px;
+
+}
+
+.brewery-profile-header{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.brewery-profile-header h1{
+	display: inline-block;
+	margin-left: 0px;
+}
+
+.arcLabel{
+	font-size: 18px;
+	fill: #2c3e50;
+}
+
+.arcLabel:hover{
+	font-size: 18px;
+	fill: #ecf0f1;
+	cursor: pointer;
+}
+
+.table{
+	width: 800px;
+	margin: 0 auto;
+}
+
+.brewery-icon{
+	width: 250px;
+	height: 200px;
+	margin: 10px 15px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.brewery-icon-image{
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	background-size: 100%;
+}
+
+.profile-image{
+	width: 150px;
+	height: 150px;
+	border: 3px solid white;
+	border-radius: 10px;
+	background-size: 100%;
+	margin: 0 auto;
+}
+
+.flux_wrap{
+	width: 100%;
+	background-color: white;
+}
+
+.center_wrapper {
+	width: 970px;
+	margin: 0 auto;
+}
+
+.brewery_wrapper{
+	width: 800px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.flux_container {
+	display: inline-block;
+}
+
+.flux_container_beers {
+	display: inline-block;
+	margin: 5px;
+}
+
+.brew_flux_container{
+	display: inline-block;
+}
+
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
+.margin-container{
+	margin: 0 auto;
+	display: block;
+	width: 700px;
+}
+
+.find-router{
+	width: 300px;
+	height: 300px;
+	margin: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.find-router img{
+	width: 300px;
+	height: 200px;
+}
+
+div.beer-route{
+	background-image: url('/images/beer_route_bw.png');
+	height: 200px;
+	width: 300px;
+	transition: background-image .5s ease-in-out;
+	text-align: center;
+}
+
+div.beer-route:hover{
+	background-image: url('/images/beer_route_color.png');
+	cursor: pointer;
+}
+
+div.brewery-route{
+	background-image: url('/images/brewery_route_bw.png');
+	height: 200px;
+	width: 300px;
+	transition: background-image .5s ease-in-out;
+	text-align: center;
+}
+
+div.brewery-route:hover{
+	background-image: url('/images/brewery_route_color.png');
+	cursor: pointer;
+}
+
+div.beer-route h3, div.brewery-route h3{
+	transition: opacity .5s ease-in-out;
+	line-height: 175px;
+	color: white;
+}
+
+div.beer-route:hover h3, div.brewery-route:hover h3{
+	opacity: 0;
+}
+
+.search-statement{
+	width: 800px;
+	margin: 0 auto;
+}
+
+.search-form{
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+
+.search-form button {
+	margin-top: 10px;
+	width: 85px;
+}
+.search-form .brewery_button {
+	margin-left: 8px;
+}
+
+.piechart{
+	width: 100%;
+	margin-top: 50px;
+	padding-left: 110px;
+	background-color: #bdc3c7;
+}
+
+.center-text{
+	width: 100%;
+	margin-top: 50px;
+	text-align: center;
+	background-color: #bdc3c7;
+}
+
+.center-text h1{
+	padding-top: 50px;
+	padding-right: 150px;
+}
+
+.pagination-nav{
+	height: 50px;
+}
+
+.form-wrapper{
+	width: 500px;
+	margin: 50px auto;
+	border: 3px solid black;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: #67809F;
+	color: white;
+}
+
+#login-btn{
+	float: left;
+}
+
+#login-form{
+	display: none;
+	width: 300px;
+	position: absolute;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	left: 10px;
+	top: 100px;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+/**/

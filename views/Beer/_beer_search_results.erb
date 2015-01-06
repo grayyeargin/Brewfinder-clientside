@@ -1,0 +1,41 @@
+
+<script type="text/template" id="beer-list-item-template">
+
+
+	
+	<nav class="pagination-nav">
+	  <ul class="pagination">
+	    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+	    <li><a href="<%%= collection.url %>/1">1</a></li>
+	    <li><a href="<%%= collection.url %>/2">2</a></li>
+	    <li><a href="<%%= collection.url %>/3">3</a></li>
+	    <li><a href="<%%= collection.url %>/4">4</a></li>
+	    <li><a href="<%%= collection.url %>/5">5</a></li>
+	    <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+	  </ul>
+	</nav>
+
+	<div class="search-statement">
+		<h2><%%= collection.totalBeers %> results for '<%%= collection.query %>'</h2>
+	</div>
+
+	<table class="table table-striped">
+		 <TR>
+      <TH>Beer</TH>
+      <TH>Brewery</TH>
+      <TH>Style</TH>
+      <TH>ABV</TH>
+   	</TR>
+  <%% collection.each(function(beer){  %>
+  	<TR>
+     	<TD><a href="/#beers/<%%= beer.get('id') %>"><%%= beer.get("name") %></a></TD>
+      <TD><a href="/#breweries/<%%= beer.get('brewery_id') %>"><%%= beer.get("brewery_name") %></a></TD>
+      <TD><%%= beer.get("style") %></TD>
+      <TD><%%= beer.get("abv") %></TD>
+   	</TR>
+  <%% }) %>
+  </table>
+
+
+
+</script>
