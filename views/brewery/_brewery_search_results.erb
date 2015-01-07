@@ -1,0 +1,30 @@
+<script type="text/template" id="brewery-list-template">
+
+  <%= erb :"navigation/_page_navigation" %>
+
+
+	<div class="search-statement">
+		<h2><%%= collection.total_breweries %> results for '<%%= collection.query %>'</h2>
+	</div>
+
+	<table class="table table-striped">
+		 <TR>
+		 	<TH></TH>
+      <TH>Brewery</TH>
+      <TH>Location</TH>
+   	</TR>
+  <%% collection.each(function(brewery){  %>
+  	<TR>
+      <TD><a href="/#breweries/<%%= brewery.get('id')%>"><div class="brewery-icon-image" style="background-image: url(<%%= brewery.get('image_url') %>)"></div></a></TD>
+      <TD><a href="/#breweries/<%%= brewery.get('id')%>"><%%= brewery.get("name") %></a></TD>
+      <TD><%%= brewery.get("location") %></TD>
+   	</TR>
+  <%% }) %>
+  </table>
+
+
+
+
+  
+
+</script>

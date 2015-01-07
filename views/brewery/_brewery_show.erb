@@ -1,0 +1,29 @@
+<script type="text/template" id="brewery-show-template">
+
+  <%= erb :"navigation/_page_navigation" %>
+
+	<div class="sticky-brewery-background">
+		<div class="profile-image" style="background-image: url(<%%= image %>)"></div>
+		<h1><%%= name %></h1></br>
+		<span class="brewery-location"><i><%%= location %></i></span>
+	</div>
+	
+
+
+
+	<table class="table table-striped">
+		 <TR>
+      <TH>Beer</TH>
+      <TH>Style</TH>
+      <TH>ABV</TH>
+   	</TR>
+  <%% beer_selection.forEach(function(beer){ %>
+  	<TR>
+      <TD><a href="/#beers/<%%= beer['beer_id']%>"><%%= beer.name %></a></TD>
+      <TD><%%= beer['style'] %></TD>
+      <TD><%%= beer['abv'] %></TD>
+   	</TR>
+  <%% }) %>
+  </table>
+	
+</script>

@@ -19,10 +19,12 @@ var BreweryRouter = Backbone.Router.extend({
 	},
 
 	map: function(){
+
 		var view = _.template($('#brewery-map-template').html());
 		this.$el.html(view);
 		mapBrewerySearch();
 		fluxBrewerySlider();
+		breweryMap();
 	},
 
 	search: function(query){

@@ -1,4 +1,4 @@
-window.onload = function(){
+function breweryMap(){
 
 	var brewery_map = new Datamap({
 	  scope: 'usa',
