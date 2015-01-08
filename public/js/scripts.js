@@ -73,9 +73,26 @@ function createLike(){
 				currentUser = data.user;
 			}
 		})
-
 	})
+}
 
+function createReview(){
+	var reviewData = document.querySelector('.like-btn');
+
+	$(".review-btn").on("click", function(){
+		$.ajax({
+			url: "http://localhost:5000/reviews",
+			method: "post",
+			dataType: "json",
+			data: {user_id: likeData.dataset.userid, beer_id: likeData.dataset.beerid},
+			success: function(data){
+				debugger;
+				$(".like-btn").addClass("btn-success").removeClass("btn-default", "like-btn");
+				$(".btn-success").text("Liked!");
+				currentUser = data.user;
+			}
+		})
+	})
 }
 
 

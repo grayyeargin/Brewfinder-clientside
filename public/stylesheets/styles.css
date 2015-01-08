@@ -439,6 +439,11 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 	padding: 10px;
 }
 
+#review-form{
+	display: none;
+	
+}
+
 
 
 

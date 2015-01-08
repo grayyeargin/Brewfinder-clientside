@@ -13,6 +13,10 @@ var User = Backbone.Model.extend({
 	urlRoot: 'http://localhost:5000/users'
 });
 
+var Review = Backbone.Model.extend({
+	urlRoot: 'http://localhost:5000/reviews'
+});
+
 
 
 

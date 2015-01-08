@@ -23,13 +23,30 @@ var BeerProfileView = Backbone.View.extend({
 	tagName: 'div',
 	className: 'beer-profile',
 	template: _.template($('#beer-show-template').html()),
+	events: {
+		"click #review-beer": "reviewForm",
+		"click #review-btn" : "reviewBeer"
+	},
 	initialize: function(){
     this.render();
   },
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
     return this;
-  }
+  },
+  reviewForm: function(){
+  	$('#review-form').slideToggle('slow');
+  },
+  reviewBeer: function(){
+  	var likeData = document.querySelector('.like-btn');
+		review = new Review({
+			rating: parseInt(this.$("input[name='rating']").val()),
+			comment: this.$('textarea').val(),
+			user_id: likeData.dataset.userid,
+			beer_id: likeData.dataset.beerid
+		});
+		review.save();
+	}
 });
 
 
