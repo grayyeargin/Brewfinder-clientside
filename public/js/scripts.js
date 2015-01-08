@@ -47,6 +47,15 @@ function signUpSubmit(){
 	})
 }
 
+function alreadyLiked(beer){
+	currentUser.likes.forEach(function(like){
+		if (like.id == beer.id) {
+			$(".like-btn").addClass("btn-success").removeClass("btn-default", "like-btn");
+			$(".btn-success").text("Liked!");
+		}
+	})
+}
+
 
 function createLike(){
 	var likeData = document.querySelector('.like-btn');
@@ -58,9 +67,10 @@ function createLike(){
 			dataType: "json",
 			data: {user_id: likeData.dataset.userid, beer_id: likeData.dataset.beerid},
 			success: function(data){
-				console.log(data.message)
-				$(".btn-default").addClass("btn-success").removeClass("btn-default");
+				debugger;
+				$(".like-btn").addClass("btn-success").removeClass("btn-default", "like-btn");
 				$(".btn-success").text("Liked!");
+				currentUser = data.user;
 			}
 		})
 
@@ -227,9 +237,9 @@ function findImageTransitions(){
 
 
 
-window.addEventListener("click", function(){
-	window.scrollTo(0, 0);
-})
+// window.addEventListener("click", function(){
+// 	window.scrollTo(0, 0);
+// })
 
 
 

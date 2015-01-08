@@ -19,6 +19,7 @@ var BeerRouter = Backbone.Router.extend({
 			this.view.remove();
 			this.view = null;
 		}
+		window.scrollTo(0, 0);
 		this.view = view;
 		this.$el.html(this.view.render().$el);
 	},
@@ -28,6 +29,7 @@ var BeerRouter = Backbone.Router.extend({
 			this.$el.empty();
 			this.view = null;
 		}
+		window.scrollTo(0, 0);
 		var view = _.template($('#beer-piechart-template').html());
 		this.$el.html(view);
 		fluxSlider();
@@ -37,12 +39,13 @@ var BeerRouter = Backbone.Router.extend({
 		this.setView(view);
 	},
 	homepage: function(){
-		$(window).unbind('scroll');
+		
 		if (this.view) {
 			this.view.remove();
 			this.$el.empty();
 			this.view = null;
 		}
+		window.scrollTo(0, 0);
 		var view = _.template($('#home-page-template').html());
 		this.$el.html(view);
 		loginForm();
@@ -87,6 +90,7 @@ var BeerRouter = Backbone.Router.extend({
 				var view = new BeerProfileView({ model: beer });
 				that.setView(view);
 				createLike();
+				alreadyLiked(beer);
 			}
 		})
 	},

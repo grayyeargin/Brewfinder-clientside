@@ -25,7 +25,6 @@ var UserRouter = Backbone.Router.extend({
 		var that = this;
 		user.fetch({
 			success: function(){
-				debugger;
 				console.log(user);
 				var view = new UserProfileView({ model: user });
 				that.setView(view);
