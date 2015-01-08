@@ -11,6 +11,14 @@
 	</div>
 
 	<div class="margin-container">
+
+	<%% if (currentUser) {%>
+		<div class="artist-like-button">
+			<button type="button" data-userid="<%%= currentUser.id %>" data-beerid="<%%= id %>" class="btn btn-default like-btn">Like Beer</button>
+		</div>
+	<%% } %>
+	
+
 	<%% if (description) {%>
 		<h2>Description</h2>
 		<p><%%= description %></p>
@@ -19,3 +27,4 @@
 
 
 </script>
+

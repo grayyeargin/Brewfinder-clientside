@@ -86,6 +86,7 @@ var BeerRouter = Backbone.Router.extend({
 			success: function(){
 				var view = new BeerProfileView({ model: beer });
 				that.setView(view);
+				createLike();
 			}
 		})
 	},

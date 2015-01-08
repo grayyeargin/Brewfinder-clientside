@@ -1,11 +1,11 @@
 // Create Beer model
 var Beer = Backbone.Model.extend({
-	urlRoot: 'http://104.131.196.188/api/beers'
+	urlRoot: 'http://localhost:5000/api/beers'
 });
 
 // Create Brewery model
 var Brewery = Backbone.Model.extend({
-	urlRoot: 'http://104.131.196.188/api/breweries'
+	urlRoot: 'http://localhost:5000/api/breweries'
 });
 
 

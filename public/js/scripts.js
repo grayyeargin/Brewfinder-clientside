@@ -48,6 +48,27 @@ function signUpSubmit(){
 }
 
 
+function createLike(){
+	var likeData = document.querySelector('.like-btn');
+
+	$(".like-btn").on("click", function(){
+		$.ajax({
+			url: "http://localhost:5000/likes",
+			method: "post",
+			dataType: "json",
+			data: {user_id: likeData.dataset.userid, beer_id: likeData.dataset.beerid},
+			success: function(data){
+				console.log(data.message)
+				$(".btn-default").addClass("btn-success").removeClass("btn-default");
+				$(".btn-success").text("Liked!");
+			}
+		})
+
+	})
+
+}
+
+
 function beerParams(){
 	return {
 		query: $('.beer-search').val()
@@ -253,7 +274,6 @@ $(function(){
 	$('#brewery-button').on('click', function(e){
 			breweryRouter.navigate("#breweries", {trigger: true});
 	})
-
 
 	// jQuery Smoove
 	

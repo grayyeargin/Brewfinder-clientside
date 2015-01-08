@@ -243,6 +243,15 @@ nav form{
 	margin: 0 auto;
 }
 
+.usertable{
+	width: 400px;
+	margin: 0 10px;
+}
+
+.usertable span {
+	font-size: 12px;
+}
+
 .brewery-icon{
 	width: 250px;
 	height: 200px;
@@ -380,9 +389,13 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 
 .piechart{
 	width: 100%;
-	margin-top: 50px;
-	padding-left: 110px;
+	margin-top: 50;
 	background-color: #bdc3c7;
+}
+
+.piechart svg{
+	margin: 0 auto;
+	display: block;
 }
 
 .center-text{
@@ -394,7 +407,6 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 
 .center-text h1{
 	padding-top: 50px;
-	padding-right: 150px;
 }
 
 .pagination-nav{

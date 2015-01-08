@@ -1,6 +1,6 @@
 var BeerList = Backbone.Collection.extend({
 	model: Beer,
-	url: 'http://104.131.196.188/api/beers',
+	url: 'http://localhost:5000/api/beers',
 	parse: function(response){
     return response.beers;
 	}
@@ -9,7 +9,7 @@ var BeerList = Backbone.Collection.extend({
 
 var BreweryList = Backbone.Collection.extend({
 	model: Brewery,
-	url: 'http://104.131.196.188/api/breweries'
+	url: 'http://localhost:5000/api/breweries'
 });
 
 

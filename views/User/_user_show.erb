@@ -1,0 +1,26 @@
+<script type="text/template" id="user-profile-template">
+
+	<%= erb :"navigation/_page_navigation" %>
+
+	<div class="sticky-brewery-background">
+		<div class="profile-image" style="background-image: url(<%%= image_url %>)"></div>
+		<h1><%%= username %></h1></br>
+		<span class="brewery-location"><i><%%= first_name %></i></span>
+	</div>
+
+	
+	<div class="center_wrapper">
+		<table class="table usertable table-striped">
+			<%% likes.forEach(function(like){ %>
+			<TR>
+	      <TD width="100px"><a href="/#beers/<%%= like.id %>"><div class="brewery-icon-image" style="background-image: url(<%%= like.image %>)"></div></a></TD>
+	      <TD><a href="/#beers/<%%= like.id %>"><%%= like.name %></a></br>
+	      		<span><i><%%= like.brewery_name %></i></span></br>
+	      		<span><i><%%= like.style %></i></span></br>
+	      		<span>ABV: <i><%%= like.abv %>%</i></span></TD>
+	   	</TR>
+	   	<%% }) %>
+		</table>
+	</div>
+	
+</script>
