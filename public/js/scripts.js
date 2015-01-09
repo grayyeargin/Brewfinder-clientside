@@ -137,6 +137,11 @@ function paginatePage(){
 	})
 }
 
+function activePagination(page){
+	// $('.pagination li').removeClass('active');
+	$('li:contains('+parseInt(page)+')').addClass('active');
+}
+
 
 function searchBar(){
 	$('body').on('click', ".beer_button", function(){

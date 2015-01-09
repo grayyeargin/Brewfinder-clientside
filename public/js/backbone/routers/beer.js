@@ -74,13 +74,15 @@ var BeerRouter = Backbone.Router.extend({
 			success: function(collection, data){
 				collection.totalBeers = data.total;
 				collection.query = query;
+				collection.totalPages = data.total_pages;
+				collection.currentPage = page;
 				collection.url = "#search/by_style/"+query;
 				collection.current_url = "#search/by_style/" + query + "/" + page;
 				var view = new BeerListView({ collection: beers});
 				that.setView(view);
+				activePagination(page);
 			}
 		})
-		paginatePage();
 	},
 	show: function(id) {
 		var beer = new Beer({id: id});
@@ -105,6 +107,8 @@ var BeerRouter = Backbone.Router.extend({
 			},
 			success: function(collection, data){
 				collection.totalBeers = data.total;
+				collection.totalPages = data.total_pages;
+				collection.currentPage = page;
 				collection.query = query;
 				collection.url = "#search/"+query;
 				collection.current_url = "#search/" + query + "/" + page;

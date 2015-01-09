@@ -4,14 +4,17 @@
 	<%= erb :"navigation/_page_navigation" %>
 	
 	<nav class="pagination-nav">
-	  <ul class="pagination">
-	    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
-	    <li><a href="<%%= collection.url %>/1">1</a></li>
-	    <li><a href="<%%= collection.url %>/2">2</a></li>
-	    <li><a href="<%%= collection.url %>/3">3</a></li>
-	    <li><a href="<%%= collection.url %>/4">4</a></li>
-	    <li><a href="<%%= collection.url %>/5">5</a></li>
-	    <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+	  <ul class="pager">
+
+	  	<%% if (parseInt(collection.totalPages) > 1 && parseInt(collection.currentPage) === 1){ %>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage + 1 %>">Next Page</a></li>
+	  	<%% } else if (collection.currentPage === collection.totalPages) { %>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage - 1 %>">Previous Page</a></li>
+	  	<%% } else  { %>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage - 1 %>">Previous</a></li>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage + 1 %>">Next</a></li>
+	  	<%% } %>
+ 
 	  </ul>
 	</nav>
 
@@ -35,6 +38,21 @@
    	</TR>
   <%% }) %>
   </table>
+
+  <nav class="pagination-nav">
+	  <ul class="pager">
+
+	  	<%% if (parseInt(collection.totalPages) > 1 && parseInt(collection.currentPage) === 1){ %>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage + 1 %>">Next Page</a></li>
+	  	<%% } else if (collection.currentPage === collection.totalPages) { %>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage - 1 %>">Previous Page</a></li>
+	  	<%% } else  { %>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage - 1 %>">Previous</a></li>
+	  		<li><a href="<%%= collection.url %>/<%%= collection.currentPage + 1 %>">Next</a></li>
+	  	<%% } %>
+ 
+	  </ul>
+	</nav>
 
 
 

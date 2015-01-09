@@ -21,6 +21,19 @@
 	   	</TR>
 	   	<%% }) %>
 		</table>
+
+		<div class="reviewed-beers">
+			<%% reviews.forEach(function(review){ %>
+				<div class="review-box">
+					<h4><%%= review.beer %></h4> - <%%= review.rating %></br>
+					<%%= review.comment %>
+				</div>
+			<%% }) %>
+		</div>
+
+
+
 	</div>
 	
 </script>
+
