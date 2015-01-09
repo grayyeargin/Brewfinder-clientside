@@ -51,6 +51,8 @@ var BeerRouter = Backbone.Router.extend({
 		loginForm();
 		findImageTransitions();
 		loginSubmit();
+		breweryMap();
+		scrollHomePage();
 	},
 	edit: function(id){
 		var beer = new Beer({id: id});

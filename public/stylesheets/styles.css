@@ -89,21 +89,199 @@ body {
 
 
 .brew-container{
-	margin-top: 10px;
-	margin: 10px auto;
+	margin: 0px auto;
 	background-color: white;
 	padding: 0;
 }
 
-.sticky-background{
-	background-image: url('/images/beer_taps1.png');
+
+/*Homepage CSS*/
+.home-background {
+	position: relative;
+	background-image: url('/images/home-background.png');
 	background-size: cover;
-	height: 500px;
 	background-position: center center;
 	background-attachment: fixed;
-	box-shadow: inset 0em 0em 1em #111;
+	color: white;
+	height: 100vh;
+}
+
+.home-background .center_wrapper{
+	position: relative;
+	top: 10%;
+}
+
+.home-background .home-logo {
+	display: block;
+}
+
+.home-background h3{
+	text-align: center;
+}
+
+.home-section{
+	vertical-align: top;
+	display: inline-block;
+	height: 300px;
+	width: 300px;
+	background-color: ;
+	border-left: 1px solid white;
+}
+
+.home-section:nth-child(2){
+	width: 500px;
+}
+
+.home-section:first-child button:first-child{
+	margin-top: 90px;
+}
+
+.home-section h3{
+	margin: 20px 0;
+}
+
+.home-section:first-child button{
+	display: block;
+	margin: 0 auto;
+}
+
+.home-search{
+	margin: 100px 0 0 100px;
+}
+
+.home-section input{
+	width: 300px;	
+	height: 40px;
+}
+
+.home-section:nth-child(2) button {
+	width: 100px;
+	display: inline-block;
+}
+
+.beer_button {
+	margin: 0 20px 0 30px;
+}
+
+
+
+
+.home-section:first-child{
+	border: none;
+	margin-left: 60px;
+}
+
+.home-section .form-group {
+	margin-bottom: 0;
+} 
+
+.map_wrapper{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	padding-top: 50px;
+	height: 100vh;
+	background-image: url('/images/hop-farm.png');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 	color: white;
 }
+
+.style_wrapper {
+	background-image: url('/images/biergarten-night.png');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	text-align: center;
+	padding-top: 50px;
+	background-color: white;
+	height: 100vh;
+}
+
+.style_box {
+	position: relative;
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	margin: 10px;
+	vertical-align: top;
+	cursor: pointer; 
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0em 0em 2em white;
+	transition: background-color .5s, box-shadow .5s;
+	-webkit-transition: background-color .5s, box-shadow .5s;
+}
+
+.style_box:hover {
+	background-color: #F89406;
+	box-shadow: 0em 0em 3em #F89406;
+}
+
+.style_box h3 {
+	position: absolute;
+	opacity: 1;
+	width: 100%;
+	height: 30%;	
+	overflow: auto;
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+	transition: opacity .5s;
+  -webkit-transition: opacity .5s;
+}
+
+.style_box:hover h3 {
+	opacity: 0;
+}
+
+
+.style_box .style_box_info {
+	position: absolute;
+	color: white;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	display: table; 
+	transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+
+.style_box_info p {
+	padding: 5px;
+	display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+}
+
+.style_box:hover .style_box_info {
+	opacity: 1;
+}
+
+.underline_header {
+	text-align: center;
+	margin: 0 auto;	
+	width: 500px;
+	border-bottom: solid 1px white;
+}
+
+.navigation_button {
+display: block;
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 0px;
+left: 50%;
+background-color: #333333;
+cursor: pointer;
+}
+
+.vertical_middle {
+	position: relative;
+  top: 30%;
+  transform: translateY(-30%);
+}
+
 
 .sticky-brewery-background{
 	background-image: url('/images/brewery_show.png');
@@ -138,38 +316,28 @@ body {
 	margin-bottom: 2px;
 }
 
-
-.sticky-background h1:nth-child(1){
-	padding-top: 200px;
-}
-
 nav{
 	text-align: center;
 	height: 100px;
 }
 
-nav form{
+/*nav form{
 	position: absolute;
 	top: 40px;
 	right: 50px;
-}
+}*/
 
 .home-logo{
-	padding-top: 15px;
-	width: 350px;
+	padding-top: 100px;
+	width: 550px;
 	margin: 0 auto;
 	display: inline-block;
 }
 
-.map_wrapper{
-	width: 100%;
-	text-align: center;
-	margin-top: 50px;
-}
 
 #map {
-	width: 960px;
-	height: 500px;
+	height: 80%;
+	width: 70%;	
 	margin: 0 auto;
 	cursor: pointer;
 }
@@ -180,21 +348,7 @@ nav form{
 
 }
 
-#beer-button{
-	background: url('http://www.runnersworld.com/sites/default/files/styles/rw_slideshowmax/public/beer1.jpg?itok=lN5FpPwt')center;
-	height: 100px;
-	width: 200px;
-	margin: 10px 25px 10px auto;
 
-}
-
-#brewery-button{
-	background: url('http://www.runnersworld.com/sites/default/files/styles/rw_slideshowmax/public/beer1.jpg?itok=lN5FpPwt')center;
-	height: 100px;
-	width: 200px;
-	margin: 10px auto 10px 25px;
-
-}
 
 .brewery-profile-img {
 	border: 3px solid white;
@@ -423,9 +577,6 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 	color: white;
 }
 
-#login-btn{
-	float: left;
-}
 
 #login-form{
 	display: none;

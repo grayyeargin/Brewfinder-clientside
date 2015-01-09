@@ -1,26 +1,103 @@
 <script type="text/template" id="home-page-template">
 
-	<%= erb :"navigation/_home_navigation" %>
 
-	<div class="sticky-background">
-		<h1>Find Your Favorite Beer</h1>
-		<h1>And Breweries From Across the Great USA</h1>
+	<div class="home-background">
+		<img src="/images/brewfinder-large-logo.png" alt="" class="home-logo">
+		<div class="center_wrapper">
+			<div class="home-section">
+				<button id="login-btn" class="btn btn-primary">LOGIN</button>
+				<h3>- OR -</h3>
+				<button id="signup-btn" class="btn btn-primary">SIGN UP</button>
+			</div>
+				
+			<div class="home-section">
+				<div class="home-search" role="search">
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Search">
+				  </div>
+				  </br><button class="btn btn-success beer_button">Beers</button>
+				  <button class="btn btn-success brewery_button">Breweries</button>
+				</div>
+			</div>
+		</div>	
+		<a class="navigation_button" href="#map_nav">DOWN</a>
 	</div>
 
+	<div id="map_nav" class="map_wrapper">
+		<h2 class="underline_header">Breweries by Location</h2>
+		<div id="map"></div>
+		<a class="navigation_button" href="#style_nav">DOWN</a>
+	</div>
 
-	<div class="margin-container">
-		<h1>Explore Brewfinder</h1>
-
-		<div class="find-router float-left" data-move-x="-200px">
-			<a href="/#beers"><div class="beer-route">
-				<h3>beers</h3>
-			</div></a>
-		</div>
-		
-		<div class="find-router float-right">
-			<a href="/#breweries"><div class="brewery-route">
-				<h3>breweries</h3>
-			</div></a>
+	<div id="style_nav" class="style_wrapper">
+		<h2 class="underline_header">Beer by Styles</h2>
+		<div class="center_wrapper vertical_middle">
+			<div class="style_box">
+				<h3>India Pale Ale</h3>
+			</div>
+			<div class="style_box">
+				<h3>Hefeweizen</h3>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
+			<div class="style_box">
+				<h3>Stout</h3>
+				<div class="style_box_info">
+					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+				</div>
+			</div>
 		</div>
 	</div>
 

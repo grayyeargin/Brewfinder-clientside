@@ -9,7 +9,12 @@ function breweryMap(){
 	  	MEDIUM: '#6eb3c3',
 	  	LOW: '#90d7e4',
 	    VERYLOW: '#acf5ff',
-	    defaultFill: '#22A7F0',
+	    defaultFill: '#6BB9F0',
+	  },
+	  geographyConfig: {
+	  	highlightBorderColor: '#bada55',
+	  	highlightBorderWidth: 2,
+	  	popupOnHover: false
 	  },
 	  data: {
 	  	CA: {
@@ -316,6 +321,6 @@ function breweryMap(){
 
 	});
 
-	brewery_map.labels();
+	brewery_map.labels({labelColor: "#fff"});
 
 };

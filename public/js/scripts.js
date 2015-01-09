@@ -108,6 +108,15 @@ function breweryParams(){
 	}
 }
 
+function scrollHomePage(){
+	$('.navigation_button').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 1000);
+    return false;
+	});
+}
+
 
 function fetchBeersSearch() {
 	$('.search-button').on('click', function(e){
