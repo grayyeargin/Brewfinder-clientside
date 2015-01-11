@@ -1,22 +1,42 @@
 <script type="text/template" id="beer-style-template">
 
-<%%= style.description %>
+<%= erb :"navigation/_page_navigation" %>
 
-<table class="table table-striped">
-		 <TR>
-      <TH>Beer</TH>
-      <TH>Brewery</TH>
-      <TH>Style</TH>
-      <TH>ABV</TH>
-   	</TR>
-  <%% style.beers.forEach(function(beer){  %>
-  	<TR>
-     	<TD><a href="/#beers/<%%= beer.id %>"><%%= beer.name %></a></TD>
-      <TD><a href="/#breweries/<%%= beer.brewery_id %>"><%%= beer.brewery_name %></a></TD>
-      <TD><%%= beer.style %></TD>
-      <TD><%%= beer.abv %></TD>
-   	</TR>
-  <%% }) %>
- </table>
+<div class="center_wrapper">
+	<h1><%%= style.name %></h1>
+
+
+	<div class="style-info">
+		<p><span>Description: </span><%%= style.description %></p>
+	</div>
+	<div class="style-info">
+		<div class="bar-chart">
+			<div class="center-text">
+				<h3>ABV Distribution</h3>
+			</div>
+		</div>
+	</div>
+
+	<h2>Top 10 <%%= style.name %>s</h2>
+	<table class="table table-striped">
+			 <TR>
+	      <TH>Beer</TH>
+	      <TH>Brewery</TH>
+	      <TH>Avg. Rating</TH>
+	   	</TR>
+	  <%% style.beers.forEach(function(beer){  %>
+	  	<TR>
+	     	<TD><a href="/#beers/<%%= beer.id %>"><%%= beer.name %></a></TD>
+	      <TD><a href="/#breweries/<%%= beer.brewery_id %>"><%%= beer.brewery_name %></a></TD>
+	      <TD><%%= beer.avg_rating %></TD>
+	   	</TR>
+	  <%% }) %>
+	 </table>
+
+</div>
 
 </script>
+
+<div class="style-info">
+	
+</div>

@@ -65,6 +65,7 @@ var BeerRouter = Backbone.Router.extend({
 		})
 	},
 	stylePage: function(query){
+		$('svg').remove();
 		styleInfo = new Style({style: query})
 		var that = this;
 		styleInfo.fetch({
@@ -72,9 +73,10 @@ var BeerRouter = Backbone.Router.extend({
 				style: query
 			},
 			success: function(){
-				debugger;
+				data_info = styleInfo.attributes.abv_info
 				var view = new StyleView({model: styleInfo});
 				that.setView(view);
+				barChart(data_info)
 			}
 		})
 	},

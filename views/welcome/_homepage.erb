@@ -5,9 +5,13 @@
 		<img src="/images/brewfinder-large-logo.png" alt="" class="home-logo">
 		<div class="center_wrapper">
 			<div class="home-section">
-				<button id="login-btn" class="btn btn-primary">LOGIN</button>
-				<h3>- OR -</h3>
-				<button id="signup-btn" class="btn btn-primary">SIGN UP</button>
+				<%% if (currentUser) {%>
+					<h2>Welcome <%%= currentUser.first_name %>!</h2>
+				<%% } else { %>
+					<button id="login-btn" class="btn btn-primary">LOGIN</button>
+					<h3>- OR -</h3>
+					<button id="signup-btn" class="btn btn-primary">SIGN UP</button>
+				<%% } %>
 			</div>
 				
 			<div class="home-section">
@@ -32,7 +36,7 @@
 			</div>
 			<button class="btn btn-success login-btn">Login</button>
 		</div>
-		
+
 		<a class="navigation_button" href="#map_nav">DOWN</a>
 	</div>
 
@@ -48,69 +52,69 @@
 			<a href="/#style/India Pale Ale"><div class="style_box">
 				<h3>India Pale Ale</h3>
 			</div></a>
-			<div class="style_box">
+			<a href="/#style/Hefeweizen"><div class="style_box">
 				<h3>Hefeweizen</h3>
-			</div>
-			<div class="style_box">
+			</div></a>
+			<a href="/#style/Stout"><div class="style_box">
 				<h3>Stout</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Berliner Weissbier"><div class="style_box">
+				<h3>Berliner Weissbier</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Kellerbier"><div class="style_box">
+				<h3>Kellerbier</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/American Blonde Ale"><div class="style_box">
+				<h3>American Blonde Ale</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Red Ale"><div class="style_box">
+				<h3>Red Ale</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Pale Ale"><div class="style_box">
+				<h3>Pale Ale</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Porter"><div class="style_box">
+				<h3>Porter</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Specialty / Flavored"><div class="style_box">
+				<h3>Specialty / Flavored</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Pilsner"><div class="style_box">
+				<h3>Pilsner</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
-			<div class="style_box">
-				<h3>Stout</h3>
+			</div></a>
+			<a href="/#style/Saison"><div class="style_box">
+				<h3>Saison</h3>
 				<div class="style_box_info">
 					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
 				</div>
-			</div>
+			</div></a>
 		</div>
 	</div>
 
