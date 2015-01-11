@@ -17,6 +17,10 @@ var Review = Backbone.Model.extend({
 	urlRoot: 'http://localhost:5000/reviews'
 });
 
+var Style = Backbone.Model.extend({
+	urlRoot: 'http://localhost:5000/styles'
+})
+
 
 
 

@@ -69,9 +69,10 @@ var BeerEditView = Backbone.View.extend({
 			abv: parseFloat(this.$("input[name='abv']").val()),
 			description: this.$('textarea').val()
 		});
-		// beerRouter.navigate('beers/' + this.model.id, {trigger: true})
+		beerRouter.navigate('beers/' + this.model.id, {trigger: true})
 	}
 })
+
 
 
 

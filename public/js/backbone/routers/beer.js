@@ -11,8 +11,7 @@ var BeerRouter = Backbone.Router.extend({
 		"beers/:id/edit"									: "edit",
 		"home" 														: "homepage",
 		"search/:query/:page"							: "search",
-		"search/by_style/:query"					: "styleSearch",
-		"search/by_style/:query/:page"		: "styleSearch"
+		"style/:query"										: "stylePage"
 	},
 	setView: function(view){
 		if (this.view) {
@@ -52,6 +51,7 @@ var BeerRouter = Backbone.Router.extend({
 		findImageTransitions();
 		loginSubmit();
 		breweryMap();
+		mapBrewerySearch();
 		scrollHomePage();
 	},
 	edit: function(id){
@@ -64,25 +64,17 @@ var BeerRouter = Backbone.Router.extend({
 			}
 		})
 	},
-	styleSearch: function(query, page){
-		var page = parseInt(page) || 0;
-		beers = new BeerList();
+	stylePage: function(query){
+		styleInfo = new Style({style: query})
 		var that = this;
-		beers.fetch({
+		styleInfo.fetch({
 			data: {
-				style: query,
-				page: page
+				style: query
 			},
-			success: function(collection, data){
-				collection.totalBeers = data.total;
-				collection.query = query;
-				collection.totalPages = data.total_pages;
-				collection.currentPage = page;
-				collection.url = "#search/by_style/"+query;
-				collection.current_url = "#search/by_style/" + query + "/" + page;
-				var view = new BeerListView({ collection: beers});
+			success: function(){
+				debugger;
+				var view = new StyleView({model: styleInfo});
 				that.setView(view);
-				activePagination(page);
 			}
 		})
 	},
@@ -91,6 +83,7 @@ var BeerRouter = Backbone.Router.extend({
 		var that = this;
 		beer.fetch({
 			success: function(){
+				debugger;
 				var view = new BeerProfileView({ model: beer });
 				that.setView(view);
 				createLike();

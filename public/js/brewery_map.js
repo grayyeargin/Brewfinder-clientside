@@ -13,12 +13,10 @@ function breweryMap(){
 	  },
 	  geographyConfig: {
 	  	highlightBorderColor: '#bada55',
-	  	highlightBorderWidth: 2,
-	  	popupOnHover: false
+	  	highlightBorderWidth: 2
 	  },
 	  data: {
 	  	CA: {
-	            // fillKey: 'MEDIUM',
 	            numberOfBreweries: 265,
 	            population: 38041430,
 	            peoplePer: 143552

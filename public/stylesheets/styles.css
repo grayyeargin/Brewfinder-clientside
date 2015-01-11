@@ -581,6 +581,7 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 #login-form{
 	display: none;
 	width: 300px;
+	color: black;
 	position: absolute;
 	background-color: white;
 	border: 2px solid black;

@@ -1,0 +1,22 @@
+<script type="text/template" id="beer-style-template">
+
+<%%= style.description %>
+
+<table class="table table-striped">
+		 <TR>
+      <TH>Beer</TH>
+      <TH>Brewery</TH>
+      <TH>Style</TH>
+      <TH>ABV</TH>
+   	</TR>
+  <%% style.beers.forEach(function(beer){  %>
+  	<TR>
+     	<TD><a href="/#beers/<%%= beer.id %>"><%%= beer.name %></a></TD>
+      <TD><a href="/#breweries/<%%= beer.brewery_id %>"><%%= beer.brewery_name %></a></TD>
+      <TD><%%= beer.style %></TD>
+      <TD><%%= beer.abv %></TD>
+   	</TR>
+  <%% }) %>
+ </table>
+
+</script>
