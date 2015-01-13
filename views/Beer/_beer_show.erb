@@ -4,29 +4,58 @@
 
 	<div class="sticky-beer-background">
 		<div class="profile-image" style="background-image: url(<%%= image %>)"></div>
-		<h1><%%= name %></h1></br>
-		<span class="brewery-location"><i><%%= brewery_name %></i></span>
-		<p>Style: <i><%%= style %></i></p>
-		<p>ABV: <%%= abv %></p>
+		<h1 class="beer-title"><%%= name %></h1>
+		<%% if (currentUser) {%>
+			<button type="button" data-userid="<%%= currentUser.id %>" data-beerid="<%%= id %>" class="btn btn-default like-btn">Like Beer</button>
+		<%% } %>
+
+		<div class="multiple-div-wrapper">
+			<div class="beer-info">
+				<h4><span>Brewery: </span><a href="/#breweries/<%%= brewery_id %>"><%%= brewery_name %></h4></a>
+				<h4><span>Style: </span><a href="/#style/<%%= style %>"><%%= style %></h4></a>
+				<h4><span>ABV: </span><%%= abv %></h4>
+			</div>
+			<div class="beer-info">
+				<h4>Average Rating</h4>
+				<%% if (avg_rating && currentUser) {%>
+					<span class="big-rating"><%%= avg_rating %></span>
+					<p id="review-beer">Add Review</p>
+				<%% } else if (avg_rating) { %>
+					<span class="big-rating"><%%= avg_rating %></span>
+				<%% } else if (currentUser) { %>
+					<span class="big-rating">-</span>
+					<p id="review-beer">Review Beer</p>
+				<%% } else { %>
+					<span class="big-rating">N/A</span>
+				<%% } %>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="margin-container">
-		<%% if (currentUser) {%>
-			<h2 id="review-beer">Review Beer</h2>
+	
+		<%% if (description) {%>
+			<h2>Description</h2>
+			<p><%%= description %></p>
 		<%% } %>
-	
 
-	<%% if (currentUser) {%>
-		<div class="artist-like-button">
-			<button type="button" data-userid="<%%= currentUser.id %>" data-beerid="<%%= id %>" class="btn btn-default like-btn">Like Beer</button>
-		</div>
-	<%% } %>
-	
+		<%% if (reviews.length > 0) {%>
+		<h2>Comments:</h2>
+		<table class="table table-striped">
+			<%% reviews.forEach(function(review){ %>
+			<TR>
+				<div class="review-box">
+					<div class="small-profile-image" style="background-image: url(<%%= review.user_image %>)"></div>
+				 	<p><span>User:</span> <%%= review.user %></br>
+				 	<span>Rating:</span> <%%= review.rating %></br>
+					<span>Comment:</span> <%%= review.comment %></p>
+				</div>
+			</TR>
+			<%% }) %>
+		</table>
+		<%% } %>
 
-	<%% if (description) {%>
-		<h2>Description</h2>
-		<p><%%= description %></p>
-	<%% } %>
 	</div>
 
 	<div id="review-form" class="form-wrapper">
@@ -45,4 +74,5 @@
 
 
 </script>
+
 

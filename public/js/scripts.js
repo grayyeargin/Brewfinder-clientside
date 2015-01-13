@@ -1,6 +1,6 @@
 var beerList = new BeerList(), beerRouter;
 var breweryList = new BreweryList(), breweryRouter;
-var currentUser;
+var currentUser = "hello";
 
 function loginForm(){
 	$('#login-btn').click(function() {
@@ -67,7 +67,6 @@ function createLike(){
 			dataType: "json",
 			data: {user_id: likeData.dataset.userid, beer_id: likeData.dataset.beerid},
 			success: function(data){
-				debugger;
 				$(".like-btn").addClass("btn-success").removeClass("btn-default", "like-btn");
 				$(".btn-success").text("Liked!");
 				currentUser = data.user;

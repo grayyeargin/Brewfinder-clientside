@@ -1,9 +1,9 @@
-function barChart(data_info) {
+function barChart(data_info, width_arg, height_arg) {
 	var data = data_info
 
 	var margin = {top: 20, right: 20, bottom: 50, left: 40},
-	width = 300 - margin.left - margin.right,
-	height = 200 - margin.top - margin.bottom;
+	width = (width_arg || 300) - margin.left - margin.right,
+	height = (height_arg || 200) - margin.top - margin.bottom;
 
 	var x = d3.scale.ordinal()
 		.rangeRoundBands([0, width], .1);
@@ -68,8 +68,8 @@ function barChart(data_info) {
 
 
 function pieChart(data_info){
-	var width = 960,
-	height = 700,
+	var width = 300,
+	height = 300,
 	r = Math.min(width, height) / 2;
 
 	var data = data_info
@@ -83,8 +83,8 @@ function pieChart(data_info){
 
 
 	var arc = d3.svg.arc()
-	.innerRadius(200)
-	.outerRadius(250);
+	.innerRadius(50)
+	.outerRadius(150);
 
 	var svg = d3.select(".piechart").append("svg")
 	.attr("width", width)
@@ -104,14 +104,14 @@ function pieChart(data_info){
 	.each(function(d, i) {
 		this._current = {
 			data: d.data,
-			value: d.value,
+			value: d.style,
 			startAngle: 0,
 			endAngle: 0
 		}
 	});
 
 	arcs.append("text")
-	.text(function(d, i) { return data[i].value; });
+	.text(function(d, i) { return data[i].style; });
 
 
 
@@ -145,17 +145,6 @@ function pieChart(data_info){
 		var sliceLabel = label_group.selectAll("text")
 		.data(pie(end_points));
 
-	// 	sliceLabel.enter().append("svg:text")
-	// 	.attr("class", "arcLabel bounceInDown")
-	// 	.attr("transform", function(d) { return "translate(" + [arc.centroid(d)[0] + (arc.centroid(d)[0]/5), arc.centroid(d)[1] + (arc.centroid(d)[1]/5)] + ")"; })
-	// 	.attr("text-anchor", "middle")
-	// 	.attr("rel", "popover")
-	// 	.text(function(d, i) { return data[i].style })
-	// 	.on("click", function(d, i) {
-	// 		beerRouter.navigate("#search/by_style/" + data[i].style + "/1", {trigger: true});
-	// 	})
-	// }, 2000)
-
 	sliceLabel.enter().append("svg:text")
 		.attr("class", "arcLabel bounceInDown")
 		.attr("transform", function(d) { return "translate(" + [arc.centroid(d)[0] + (arc.centroid(d)[0]/5), arc.centroid(d)[1] + (arc.centroid(d)[1]/5)] + ")"; })
@@ -163,24 +152,17 @@ function pieChart(data_info){
 		.attr("rel", "popover")
 		.attr('x', 0)
 		.attr('y', 0)
-		.text(function(d, i) { return data[i].value })
+		.text(function(d, i) { return data[i].style })
 		.append('tspan')
 		.attr('dy', 1.2+'em')
 		.attr('x', 0)
 		.text(function(d, i) { return (data[i].percent * 100).toFixed(2) + '%' })
 		
 		sliceLabel.on("click", function(d, i) {
-			beerRouter.navigate("#search/by_style/" + data[i].value + "/1", {trigger: true});
+			beerRouter.navigate("#search/by_style/" + data[i].style + "/1", {trigger: true});
 		})
 	}, 2000)
-
-
-	//  Labels for Pie Chart
-		$('path').hover(function(e){
-			console.log($(this).find('text').text())
-		}, function(){
-			console.log('you left bye bye')
-		});
+	
 }
 
 

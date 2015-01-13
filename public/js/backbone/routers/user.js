@@ -25,9 +25,13 @@ var UserRouter = Backbone.Router.extend({
 		var that = this;
 		user.fetch({
 			success: function(){
+				data_info = user.attributes.style_info;
+				abv_info = user.attributes.abv_info
 				console.log(user);
 				var view = new UserProfileView({ model: user });
 				that.setView(view);
+				pieChart(data_info);
+				barChart(abv_info, 400, 300);
 			}
 		})
 	}

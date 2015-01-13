@@ -36,14 +36,14 @@ function pieChart(data_info){
 	.each(function(d, i) {
 		this._current = {
 			data: d.data,
-			value: d.value,
+			style: d.style,
 			startAngle: 0,
 			endAngle: 0
 		}
 	});
 
 	arcs.append("text")
-	.text(function(d, i) { return data[i].value; });
+	.text(function(d, i) { return data[i].style; });
 
 
 
@@ -95,14 +95,14 @@ function pieChart(data_info){
 		.attr("rel", "popover")
 		.attr('x', 0)
 		.attr('y', 0)
-		.text(function(d, i) { return data[i].value })
+		.text(function(d, i) { return data[i].style })
 		.append('tspan')
 		.attr('dy', 1.2+'em')
 		.attr('x', 0)
 		.text(function(d, i) { return (data[i].percent * 100).toFixed(2) + '%' })
 		
 		sliceLabel.on("click", function(d, i) {
-			beerRouter.navigate("#search/by_style/" + data[i].value + "/1", {trigger: true});
+			beerRouter.navigate("#search/by_style/" + data[i].style + "/1", {trigger: true});
 		})
 	}, 2000)
 

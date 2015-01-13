@@ -3,33 +3,52 @@
 	<%= erb :"navigation/_page_navigation" %>
 
 	<div class="sticky-brewery-background">
-		<div class="profile-image" style="background-image: url(<%%= image_url %>)"></div>
-		<h1><%%= username %></h1></br>
-		<span class="brewery-location"><i><%%= first_name %></i></span>
+		<div class="profile-image" style="background-image: url(<%%= user.image_url %>)"></div>
+			<h1><%%= user.first_name %> <%%= user.last_name %></h1></br>
+			<span class="brewery-location">Username: <%%= user.username %></span>
 	</div>
 
 	
 	<div class="center_wrapper">
+		<div class="profile-user-information">
+			<div class="piechart">
+			<div class="center-text">
+					<h3>Style Distribution</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="profile-user-information">
+			<div class="bar-chart">
+				<div class="center-text">
+					<h3>ABV Distribution</h3>
+				</div>
+			</div>
+		</div>
+
+
 		<table class="table usertable table-striped">
-			<%% likes.forEach(function(like){ %>
+			<%% user.likes.forEach(function(like){ %>
 			<TR>
-	      <TD width="100px"><a href="/#beers/<%%= like.id %>"><div class="brewery-icon-image" style="background-image: url(<%%= like.image %>)"></div></a></TD>
+	      <TD width="100px"><a href="/#beers/<%%= like.id %>"><div class="brewery-icon-image" style="background-image: url(<%%= like.image %>)"></div></a>
+	      </TD>
 	      <TD><a href="/#beers/<%%= like.id %>"><%%= like.name %></a></br>
-	      		<span><i><%%= like.brewery_name %></i></span></br>
-	      		<span><i><%%= like.style %></i></span></br>
-	      		<span>ABV: <i><%%= like.abv %>%</i></span></TD>
+	      		<span class="small-text"><i><%%= like.brewery_name %></i></span></br>
+	      		<span class="small-text"><i><%%= like.style %></i></span></br>
+	      		<span class="small-text">ABV: <i><%%= like.abv %>%</i></span>
+	      </TD>
+	      <TD>
+	      	<span class="avg-rating">Average Rating </span>
+	      	<%% if (like.avg_rating) { %>
+	      		<span class="big-rating"><%%= like.avg_rating  %></span>
+	      	<%% } else { %>
+	      		<span class="big-rating">-</span>
+	      	<%% } %>
+	      </TD>
+
 	   	</TR>
 	   	<%% }) %>
 		</table>
-
-		<div class="reviewed-beers">
-			<%% reviews.forEach(function(review){ %>
-				<div class="review-box">
-					<h4><%%= review.beer %></h4> - <%%= review.rating %></br>
-					<%%= review.comment %>
-				</div>
-			<%% }) %>
-		</div>
 
 
 
