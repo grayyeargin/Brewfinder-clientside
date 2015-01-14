@@ -27,7 +27,7 @@ function loginSubmit(){
 		var $username = $('#login-userName').val();
 		var $password = $('#login-password').val();
 		$.ajax({
-			url: 'http://localhost:5000/sessions',
+			url: 'http://104.236.65.119:3000/sessions',
 			method: 'post',
 			dataType: 'json',
 			data: {username: $username, password: $password},
@@ -58,7 +58,7 @@ function signUpSubmit(){
 		var $lastName = $('#lastName').val();
 		var errorBox = $('#login-error');
 		$.ajax({
-			url: 'http://localhost:5000/users',
+			url: 'http://104.236.65.119:3000/users',
 			method: 'post',
 			dataType: 'json',
 			data: {user: {image_url: $image, first_name: $firstName, last_name: $lastName, username: $username, password: $password}},
@@ -99,7 +99,7 @@ function createLike(){
 
 	$(".like-btn").on("click", function(){
 		$.ajax({
-			url: "http://localhost:5000/likes",
+			url: "http://104.236.65.119:3000/likes",
 			method: "post",
 			dataType: "json",
 			data: {user_id: likeData.dataset.userid, beer_id: likeData.dataset.beerid},
@@ -117,7 +117,7 @@ function createReview(){
 
 	$(".review-btn").on("click", function(){
 		$.ajax({
-			url: "http://localhost:5000/reviews",
+			url: "http://104.236.65.119:3000/reviews",
 			method: "post",
 			dataType: "json",
 			data: {user_id: likeData.dataset.userid, beer_id: likeData.dataset.beerid},
