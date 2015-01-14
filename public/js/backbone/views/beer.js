@@ -46,6 +46,10 @@ var BeerProfileView = Backbone.View.extend({
 			beer_id: likeData.dataset.beerid
 		});
 		review.save();
+		$('#avg-header').text("Rated a...");
+		$('.big-rating').text(parseInt(this.$("input[name='rating']").val()));
+		$('#review-beer').empty();
+		$('#review-form').hide();
 	}
 });
 

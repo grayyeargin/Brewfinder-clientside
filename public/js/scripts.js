@@ -1,27 +1,49 @@
 var beerList = new BeerList(), beerRouter;
 var breweryList = new BreweryList(), breweryRouter;
-var currentUser = "hello";
+var currentUser;
 
 function loginForm(){
-	$('#login-btn').click(function() {
-		$('#login-form').slideToggle('slow');
+	$('#login-btn').click(function(){
+		$('#sign-up-form').hide();
+		$('#login-form').fadeToggle('slow');
 	});
+}
+
+function signUpForm(){
+	$('#signup-homepage-btn').click(function(){
+		$('#login-form').hide();
+		$('#sign-up-form').fadeToggle('slow');
+	});
+}
+
+function closeForm(){
+	$('.close').click(function(){
+		this.parentNode.style.display = "none";
+	})
 }
 
 function loginSubmit(){
 	$('.login-btn').on('click', function(){
-		var $username = $('#userName').val();
-		var $password = $('#password').val();
+		var $username = $('#login-userName').val();
+		var $password = $('#login-password').val();
 		$.ajax({
 			url: 'http://localhost:5000/sessions',
 			method: 'post',
 			dataType: 'json',
 			data: {username: $username, password: $password},
 			success: function(data){
+				if (data.current_user) {
+					$('#login-success').slideDown('slow').delay(2000).slideUp('slow');
+					$('#login-form').hide();
+					$('#welcome-info').empty()
+						.html('<h2>Welcome ' + data.current_user.first_name + "!</h2></br><a href='#users/" + data.current_user.id + "'>Visit Profile</a>");
+				} else {
+					$('#login-error').slideDown('slow').delay(2000).slideUp('slow');
+				}
 				console.log("it worked");
 				console.log(data.current_user);
 				currentUser = data.current_user;
-				userRouter.navigate("#users/" + data.current_user.id, {trigger: true});
+				// userRouter.navigate("#users/" + data.current_user.id, {trigger: true});
 			}
 		})
 	})
@@ -34,13 +56,28 @@ function signUpSubmit(){
 		var $image = $('#imageUrl').val();
 		var $firstName = $('#firstName').val();
 		var $lastName = $('#lastName').val();
+		var errorBox = $('#login-error');
 		$.ajax({
 			url: 'http://localhost:5000/users',
 			method: 'post',
 			dataType: 'json',
 			data: {user: {image_url: $image, first_name: $firstName, last_name: $lastName, username: $username, password: $password}},
 			success: function(data){
+				if (data.errors){
+					errorBox.empty();
+							
+					data.errors.forEach(function(error){
+						errorBox.append("<li>"  + error + "</li>")
+					})
+						
+					errorBox.slideDown('slow').delay(2000).slideUp('slow');
+				} else {
+					$('#login-success').slideDown('slow').delay(2000).slideUp('slow');
+					$('#sign-up-form').hide();
+					$('#login-form').fadeToggle('slow');
+				}
 				console.log("booya");
+				console.log(data.errors);
 				console.log(data.user);
 			}
 		})
@@ -95,18 +132,6 @@ function createReview(){
 }
 
 
-function beerParams(){
-	return {
-		query: $('.beer-search').val()
-	}
-}
-
-function breweryParams(){
-	return {
-		query: $('.hoverinfo strong').text()
-	}
-}
-
 function scrollHomePage(){
 	$('.navigation_button').click(function(){
     $('html, body').animate({
@@ -115,18 +140,6 @@ function scrollHomePage(){
     return false;
 	});
 }
-
-
-function fetchBeersSearch() {
-	$('.search-button').on('click', function(e){
-		var query = $('.beer-search').val();
-		if (query == ""){
-			alert("put some shit in the input!");
-		} else {
-			beerRouter.navigate("#search/" + query, {trigger: true});
-		}
-	})
-};
 
 
 function mapBrewerySearch(){
@@ -141,141 +154,33 @@ function paginatePage(){
 	$('ul .pagination').on('click', function(e){
 		var page = $('li').text();
 		beerRouter.navigate(Backbone.history.fragment + "/" + page);
-		console.log('hello');
 	})
-}
-
-function activePagination(page){
-	// $('.pagination li').removeClass('active');
-	$('li:contains('+parseInt(page)+')').addClass('active');
 }
 
 
 function searchBar(){
 	$('body').on('click', ".beer_button", function(){
-		var query = $('input').val();
+		var query = $('#search-input').val();
+		if (query == "") {
+			$('#login-error').slideDown('slow').delay(2000).slideUp('slow');
+			$('#login-error').empty().html("<strong>Oh snap!</strong> You didnt enter ANYTHING!!!! How can I search for NOTHING?");
+		} else {
 		beerRouter.navigate("#search/" + query + "/1", {trigger: true});
+		}
 	})
 }
 
 function searchBreweries(){
 	$('body').on('click', ".brewery_button", function(){
-		var query = $('input').val();
-		breweryRouter.navigate("#breweries/search/" + query , {trigger: true});
+		var query = $('#search-input').val();
+		if (query == "") {
+			$('#login-error').slideDown('slow').delay(2000).slideUp('slow');
+			$('#login-error').empty().html("<strong>Oh snap!</strong> You didnt enter ANYTHING!!!! How can I search for NOTHING?");
+		} else {
+			breweryRouter.navigate("#breweries/search/" + query , {trigger: true});
+		}
 	})
 }
-
-
-function fluxSlider(){
-	if (! flux.browser.supportsTransitions) {
-		$('#warn').text('Flux Slider requires a browser that supports CSS3 transitions').show();
-	}
-
-	window.mf = new flux.slider('#slider', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["blocks2"],
-		captions: true,
-		height: 200,
-		width: 300
-	});
-
-
-	gerg = new flux.slider('#slider2', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["blocks2"],
-		captions: true,
-		height: 200,
-		width: 300
-	});
-
-	window.mf = new flux.slider('#slider3', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["blocks2"],
-		captions: true,
-		height: 200,
-		width: 300
-	});
-
-	window.mf = new flux.slider('#slider4', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["blocks2"],
-		captions: true,
-		height: 200,
-		width: 300
-	});
-
-	window.mf = new flux.slider('#slider5', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["blocks2"],
-		captions: true,
-		height: 200,
-		width: 300
-	});
-
-	window.mf = new flux.slider('#slider6', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["blocks2"],
-		captions: true,
-		height: 200,
-		width: 300
-	});
-
-}
-
-
-function fluxBrewerySlider(){
-	if (! flux.browser.supportsTransitions) {
-		$('#warn').text('Flux Slider requires a browser that supports CSS3 transitions').show();
-	}
-
-	window.mf = new flux.slider('#brewslider', {
-		autoplay: true,
-		pagination: false,
-		delay: 4000,
-		transitions: ["bars3d"],
-		captions: true,
-		height: 350,
-		width: 800
-	});
-
-
-}
-
-
-// jQuery Smoove
-function findImageTransitions(){
-	$('.find-router').smoove({
-		offset  : '30%',
-    // moveX is overridden to -200px for ".bar" object
-    moveX   : '100px',
-    moveY   : '100px',
-    moveZ		: '200px'
-	})
-}
-
-
-
-// window.addEventListener("click", function(){
-// 	window.scrollTo(0, 0);
-// })
-
-
-
-
-
-
 
 
 
@@ -300,25 +205,8 @@ $(function(){
 
 	Backbone.history.start();
 
-	beerParams();
-	breweryParams();
-	mapBrewerySearch();
-	paginatePage();
 	searchBar();
 	searchBreweries();
-
-	$('#beer-button').on('click', function(e){
-			beerRouter.navigate("#beers", {trigger: true});
-	})
-
-	$('#brewery-button').on('click', function(e){
-			breweryRouter.navigate("#breweries", {trigger: true});
-	})
-
-	// jQuery Smoove
-	
-
-
 
 });
 

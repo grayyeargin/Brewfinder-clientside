@@ -1,23 +1,22 @@
-html { 
-  /*font-family: 'Lato', sans-serif;*/
-}
-
-body {
-	background-color: white;
-	font-family: 'Lato', sans-serif;
-}
-
 .nav-container{
 	width: 1100px;
 	margin: 0 auto;
 	height: 75px;
 }
 
+table a:not(.btn), .table a:not(.btn) {
+	color: #f0ad4e;
+	text-decoration: none;
+}
 
+table a:not(.btn):hover, .table a:not(.btn):hover {
+	color: white;
+}
 
-.nav-container .home-logo {
+.nav-container .home-logo-small {
 	float: left;
-	padding-top: 0;
+	margin-top: 20px;
+	padding-right: 20px;
 	width: 250px;
 }
 
@@ -32,11 +31,10 @@ body {
 
 
 .nav-container ul {
-	/*margin: 0;*/
+	float: left;
 	padding-left: 0;
 	margin: 0;
-	margin-top: 10px;
-	margin-right: 20%;
+	margin-top: 20px;
 	display: inline-block;
 }
 
@@ -46,6 +44,7 @@ body {
 	padding: 10px 20px;
 	border: 1px solid #ecf0f1;
 	border-radius: 5px;
+	background-color: none;
 	transition: background-color .5s ease-in-out;
 }
 
@@ -56,41 +55,36 @@ body {
 
 /*Ian Lunn CSS Hover*/
 .glow {
-  display: inline-block;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	display: inline-block;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-property: box-shadow;
+	transition-property: box-shadow;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 .glow:hover, .glow:focus, .glow:active {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 .grow-rotate {
-  display: inline-block;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	display: inline-block;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 .grow-rotate:hover, .grow-rotate:focus, .grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg);
+	-webkit-transform: scale(1.1) rotate(4deg);
+	transform: scale(1.1) rotate(4deg);
 }
-
-
-
-
 
 .brew-container{
 	margin: 0px auto;
-	background-color: white;
 	padding: 0;
 }
 
@@ -117,6 +111,30 @@ body {
 
 .home-background h3{
 	text-align: center;
+}
+
+#sign-up-form{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 100px;
+	left: 500px;
+}
+
+#login-success{
+	width: 400px;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 40%;
+}
+
+#login-error {
+	width: 400px;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 40%;
 }
 
 .home-section{
@@ -168,12 +186,10 @@ body {
 	margin: 0 20px 0 30px;
 }
 
-
-
-
 .home-section:first-child{
 	border: none;
 	margin-left: 60px;
+	text-align: center;
 }
 
 .home-section .form-group {
@@ -233,13 +249,12 @@ body {
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
 	transition: opacity .5s;
-  -webkit-transition: opacity .5s;
+	-webkit-transition: opacity .5s;
 }
 
 .style_box:hover h3 {
 	opacity: 0;
 }
-
 
 .style_box .style_box_info {
 	position: absolute;
@@ -249,14 +264,14 @@ body {
 	height: 100%;
 	display: table; 
 	transition: opacity 1s;
-  -webkit-transition: opacity 1s;
+	-webkit-transition: opacity 1s;
 }
 
 .style_box_info p {
 	padding: 5px;
 	display: table-cell; 
-  vertical-align: middle; 
-  text-align: center; 
+	vertical-align: middle; 
+	text-align: center; 
 }
 
 .style_box:hover .style_box_info {
@@ -266,6 +281,7 @@ body {
 .underline_header {
 	text-align: center;
 	margin: 0 auto;	
+	color: white;
 	width: 500px;
 	border-bottom: solid 1px white;
 }
@@ -290,7 +306,6 @@ body {
 .style-info:nth-of-type(2) {
 	width: 300px;
 }
-
 
 /*Beer Show Page*/
 .multiple-div-wrapper {
@@ -329,7 +344,6 @@ body {
 	color: white;
 }
 
-
 .beer-info h4:first-of-type {
 	margin-top: 5px;
 }
@@ -356,8 +370,6 @@ body {
 	color: white;
 }
 
-
-
 .review-box p {
 	vertical-align: top;
 	display: inline-block;
@@ -376,24 +388,20 @@ body {
 }
 
 
-
-
-
 .navigation_button {
-display: block;
-width: 50px;
-height: 50px;
-position: absolute;
-bottom: 0px;
-left: 50%;
-background-color: #333333;
-cursor: pointer;
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	bottom: 0px;
+	left: 48%;
+	cursor: pointer;
 }
 
 .vertical_middle {
 	position: relative;
-  top: 30%;
-  transform: translateY(-30%);
+	top: 30%;
+	transform: translateY(-30%);
 }
 
 
@@ -435,11 +443,6 @@ nav{
 	height: 100px;
 }
 
-/*nav form{
-	position: absolute;
-	top: 40px;
-	right: 50px;
-}*/
 
 .home-logo{
 	padding-top: 100px;
@@ -504,12 +507,15 @@ nav{
 
 .table{
 	width: 800px;
+	font-size: 14px;
 	margin: 0 auto;
 }
 
+
+
 .usertable{
 	width: 600px;
-	margin: 50px auto;
+	margin: 0 auto;
 }
 
 .usertable span.small-text {
@@ -527,6 +533,10 @@ nav{
 	color: #f39c12;
 	font-weight: bolder;
 	display: block;
+}
+
+.liked-header {
+	margin-left: 20%;
 }
 
 
@@ -714,47 +724,56 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 #login-form{
 	display: none;
 	width: 300px;
-	color: black;
+	color: white;
 	position: absolute;
-	background-color: white;
+	background-color: #67809F;
 	border: 2px solid black;
 	border-radius: 10px;
-	left: 10px;
-	top: 100px;
+	top: 300px;
+	left: 550px;
 	padding: 10px;
 }
 
 #review-form{
 	display: none;
-	
+	width: 200px;
+	height: 180px;
+	position: absolute;
+	top: 40%;
+	right: 20%;
+
 }
 
-
+.hoverinfo {
+	display: none;
+}
 
 
 /*Bar Chart Styling*/
 .bar {
-  fill: steelblue;
+	fill: #f0ad4e;
 }
 
 .bar:hover {
-  fill: brown;
+	fill: brown;
 }
 
 .axis {
-  font: 10px sans-serif;
+	font: 10px sans-serif;
 }
 
 .axis path,
 .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+	fill: none;
+	stroke: #fff;
+	shape-rendering: crispEdges;
 }
 
-.x.axis path {
-  display: none;
+
+svg text{
+	fill: white;
 }
+
 
 
 

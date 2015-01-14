@@ -1,20 +1,19 @@
-<div class="container">
-	<nav class="nav-container">
-		<a href="#"><img src="/images	/beer_logo.png" alt="" class="home-logo grow-rotate"></a>
-
+<div class="container navcolor">
+	<nav class="nav-container navbar">
+		<a href="#"><img src="/images/brewfinder-small-logo-invert.png" alt="" class="home-logo-small grow-rotate"></a>
 		<ul class="nav-links">
 			<a href="#"><li class="glow">Home</li></a>
-			<a href="/#beers"><li class="glow">Beers</li></a>
-			<a href="/#breweries"><li class="glow">Breweries</li></a>
+			<%% if (currentUser) { %>
+				<a href="/#users/<%%= currentUser.id %>"><li class="glow">Profile</li></a>
+			<%% } %>
 		</ul>
 
 		<div class="navbar-form search-form" role="search">
 		  <div class="form-group">
-		    <input type="text" class="form-control small-nav-input" placeholder="Search">
+		    <input id="search-input" type="text" class="form-control small-nav-input" placeholder="Search">
 		  </div>
 		  <button class="btn btn-default beer_button">Search</button>
 		  <!-- <button class="btn btn-default brewery_button" style="margin-left: 0;">Breweries</button> -->
 		</div>
-
 	</nav>
 </div>

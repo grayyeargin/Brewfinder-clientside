@@ -48,9 +48,11 @@ var BeerRouter = Backbone.Router.extend({
 		var view = _.template($('#home-page-template').html());
 		this.$el.html(view);
 		loginForm();
-		findImageTransitions();
+		signUpForm();
+		signUpSubmit();
 		loginSubmit();
 		breweryMap();
+		closeForm();
 		mapBrewerySearch();
 		scrollHomePage();
 	},
@@ -85,7 +87,6 @@ var BeerRouter = Backbone.Router.extend({
 		var that = this;
 		beer.fetch({
 			success: function(){
-				debugger;
 				var view = new BeerProfileView({ model: beer });
 				that.setView(view);
 				createLike();

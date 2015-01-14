@@ -10,6 +10,7 @@
 
 	
 	<div class="center_wrapper">
+		<%% if (user.likes.length > 0)  { %>
 		<div class="profile-user-information">
 			<div class="piechart">
 			<div class="center-text">
@@ -26,8 +27,8 @@
 			</div>
 		</div>
 
-
-		<table class="table usertable table-striped">
+		<table style="margin-bottom: 100px;" class="table usertable table-striped">
+			<h2 class="liked-header"><%%= user.first_name %>&#8217;s Favorites</h2>
 			<%% user.likes.forEach(function(like){ %>
 			<TR>
 	      <TD width="100px"><a href="/#beers/<%%= like.id %>"><div class="brewery-icon-image" style="background-image: url(<%%= like.image %>)"></div></a>
@@ -50,7 +51,9 @@
 	   	<%% }) %>
 		</table>
 
-
+		<%% } else { %>
+			<h1 style="margin-top: 10%;"><%%= user.first_name %>... Go Like Some Beers!!!</h1>
+		<%% } %>
 
 	</div>
 	

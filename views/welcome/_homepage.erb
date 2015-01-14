@@ -1,23 +1,60 @@
 <script type="text/template" id="home-page-template">
 
-
 	<div class="home-background">
+
+		<div id="login-success" class="alert alert-dismissable alert-success">
+		  <button type="button" class="close" data-dismiss="alert">×</button>
+		  <strong>Well done!</strong> You successfully signed in!.
+		</div>
+		<div id="login-error" class="alert alert-dismissable alert-danger">
+		  <button type="button" class="close" data-dismiss="alert">×</button>
+		  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+		</div>
+
+		<div id="sign-up-form" class="form-wrapper">
+			<button type="button" class="close">×</button>
+			<div class="form-group">
+		    <label for="firstName">First Name:</label>
+		    <input class="form-control" id="firstName" >
+		  </div>
+		  <div class="form-group">
+		    <label for="lastName">Last Name:</label>
+		    <input class="form-control" id="lastName" >
+		  </div>
+		  <div class="form-group">
+		    <label for="userName">Username:</label>
+		    <input class="form-control" id="userName" >
+		  </div>
+		  <div class="form-group">
+		    <label for="password">Password:</label>
+		    <input type="password" class="form-control" id="password">
+		  </div>
+		  <div class="form-group">
+		    <label for="imageUrl">Image:</label>
+		    <input class="form-control" id="imageUrl" >
+		  </div>
+		  <div class="form-group">
+		  	<input class="btn btn-success signup-btn" id="signup-btn" type="submit" value="Submit">
+		  </div>
+		</div>
+
 		<img src="/images/brewfinder-large-logo.png" alt="" class="home-logo">
 		<div class="center_wrapper">
-			<div class="home-section">
+			<div id="welcome-info" class="home-section">
 				<%% if (currentUser) { %>
 					<h2>Welcome <%%= currentUser.first_name %>!</h2>
+					</br><a href='#users/<%%= currentUser.id %>' >Visit Profile</a>
 				<%% } else { %>
 					<button id="login-btn" class="btn btn-primary">LOGIN</button>
 					<h3>- OR -</h3>
-					<button id="signup-btn" class="btn btn-primary">SIGN UP</button>
+					<button id="signup-homepage-btn" class="btn btn-primary">SIGN UP</button>
 				<%% } %>
 			</div>
 				
 			<div class="home-section">
 				<div class="home-search" role="search">
 				  <div class="form-group">
-				    <input type="text" class="form-control" placeholder="Search">
+				    <input type="text" id="search-input" class="form-control" placeholder="Search">
 				  </div>
 				  </br><button class="btn btn-success beer_button">Beers</button>
 				  <button class="btn btn-success brewery_button">Breweries</button>
@@ -26,24 +63,25 @@
 		</div>	
 
 		<div id="login-form">
+			<button type="button" class="close">×</button>
 			<div class="form-group">
 				<label for="userName">Username:</label>
-				<input class="form-control" id="userName" name="image" >
+				<input class="form-control" id="login-userName" name="image" >
 			</div>
 			<div class="form-group">
 				<label for="password">Password:</label>
-				<input type="password" class="form-control" id="password" name="abv" >
+				<input type="password" class="form-control" id="login-password" name="abv" >
 			</div>
 			<button class="btn btn-success login-btn">Login</button>
 		</div>
 
-		<a class="navigation_button" href="#map_nav">DOWN</a>
+		<a class="navigation_button" href="#map_nav"><img src="/images/down-arrow-icon.png"></a>
 	</div>
 
 	<div id="map_nav" class="map_wrapper">
 		<h2 class="underline_header">Breweries by Location</h2>
 		<div id="map"></div>
-		<a class="navigation_button" href="#style_nav">DOWN</a>
+		<a class="navigation_button" href="#style_nav"><img src="/images/down-arrow-icon.png"></a>
 	</div>
 
 	<div id="style_nav" class="style_wrapper">
@@ -51,68 +89,74 @@
 		<div class="center_wrapper vertical_middle">
 			<a href="/#style/India Pale Ale"><div class="style_box">
 				<h3>India Pale Ale</h3>
+				<div class="style_box_info">
+				<p>A very hoppy and bitter beer with a golden to amber color.</p>
+				</div>
 			</div></a>
 			<a href="/#style/Hefeweizen"><div class="style_box">
 				<h3>Hefeweizen</h3>
+				<div class="style_box_info">
+					<p>An unfiltered and cloudy beer with a banana and clove aroma</p>
+				</div>
 			</div></a>
 			<a href="/#style/Stout"><div class="style_box">
 				<h3>Stout</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>A dark beer made using roasted malt or roasted barley, hops, water and yeast</p>
 				</div>
 			</div></a>
 			<a href="/#style/Berliner Weissbier"><div class="style_box">
 				<h3>Berliner Weissbier</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>Refreshing, tart, sour and acidic, with a lemony-citric fruit sharpness</p>
 				</div>
 			</div></a>
 			<a href="/#style/Kellerbier"><div class="style_box">
 				<h3>Kellerbier</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>a smooth, naturally cloudy beer that is rich in vitamins (from the yeast)</p>
 				</div>
 			</div></a>
 			<a href="/#style/American Blonde Ale"><div class="style_box">
 				<h3>American Blonde Ale</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>Usually an all malt brew, well attenuated with a lightly malty palate</p>
 				</div>
 			</div></a>
 			<a href="/#style/Red Ale"><div class="style_box">
 				<h3>Red Ale</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>Smooth with moderate carbonation and a clean finish</p>
 				</div>
 			</div></a>
 			<a href="/#style/Pale Ale"><div class="style_box">
 				<h3>Pale Ale</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>Lighter in color and made by warm fermentation using predominantly pale malt</p>
 				</div>
 			</div></a>
 			<a href="/#style/Porter"><div class="style_box">
 				<h3>Porter</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>A dark style of beer developed in London from well-hopped beers made from brown malt.</p>
 				</div>
 			</div></a>
-			<a href="/#style/Specialty / Flavored"><div class="style_box">
-				<h3>Specialty / Flavored</h3>
+			<a href="/#style/Pale Lager"><div class="style_box">
+				<h3>Pale Lager</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>A golden-coloured beer with a well attenuated body and a varying degree of noble hop bitterness</p>
 				</div>
 			</div></a>
 			<a href="/#style/Pilsner"><div class="style_box">
 				<h3>Pilsner</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>Very light straw to golden in color with spicy herbal or floral aroma and flavor </p>
 				</div>
 			</div></a>
 			<a href="/#style/Saison"><div class="style_box">
 				<h3>Saison</h3>
 				<div class="style_box_info">
-					<p>A dark beer with a strong roasted malt flavor, often tastes of coffee or dark chocolate.</p>
+					<p>Generally around 7% abv, highly carbonated, fruity, and spicy</p>
 				</div>
 			</div></a>
 		</div>

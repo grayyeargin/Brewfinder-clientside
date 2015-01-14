@@ -159,7 +159,7 @@ function pieChart(data_info){
 		.text(function(d, i) { return (data[i].percent * 100).toFixed(2) + '%' })
 		
 		sliceLabel.on("click", function(d, i) {
-			beerRouter.navigate("#search/by_style/" + data[i].style + "/1", {trigger: true});
+			beerRouter.navigate("#style/" + data[i].style, {trigger: true});
 		})
 	}, 2000)
 	
