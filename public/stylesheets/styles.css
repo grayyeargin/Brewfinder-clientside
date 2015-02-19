@@ -1,3 +1,10 @@
+/*Sass variables/mixins/etc.*/
+.home-section-size, .home-background, .map_wrapper, .style_wrapper {
+  height: 100vh;
+  max-height: 800px;
+  min-height: 675px; }
+
+/*Start of standard Styling*/
 .nav-container {
   width: 1100px;
   margin: 0 auto;
@@ -81,39 +88,52 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  color: white;
-  height: 100vh; }
+  color: white; }
 
 .home-background .center_wrapper {
   position: relative;
   top: 10%; }
 
 .home-background .home-logo {
-  display: block; }
+  display: block;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  padding-top: 100px;
+  margin: 0 auto; }
 
 .home-background h3 {
   text-align: center; }
 
 #sign-up-form {
   display: none;
-  position: absolute;
   z-index: 1;
   top: 100px;
-  left: 500px; }
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px; }
 
-#login-success {
-  width: 400px;
+#login-form {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 40%; }
+  color: white;
+  background-color: #67809F;
+  border: 2px solid black;
+  border-radius: 10px;
+  top: 300px;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px; }
 
-#login-error {
-  width: 400px;
+#login-error, #login-success {
   display: none;
-  position: fixed;
   top: 0;
-  left: 40%; }
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px; }
 
 .home-section {
   vertical-align: top;
@@ -161,18 +181,38 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 .home-section .form-group {
   margin-bottom: 0; }
 
+.navigation_button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  cursor: pointer; }
+  .navigation_button img {
+    width: 100%;
+    height: auto; }
+
+/*Map section Home Page*/
 .map_wrapper {
   position: relative;
   width: 100%;
   text-align: center;
   padding-top: 50px;
-  height: 100vh;
   background-image: url("/images/hop-farm.png");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   color: white; }
 
+#map {
+  height: 80%;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  cursor: pointer; }
+
+/*Style section Home Page*/
 .style_wrapper {
   background-image: url("/images/biergarten-night.png");
   background-size: cover;
@@ -180,8 +220,10 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
   background-attachment: fixed;
   text-align: center;
   padding-top: 50px;
-  background-color: white;
-  height: 100vh; }
+  background-color: white; }
+
+.center_wrapper.verticle_middle {
+  min-width: 725px; }
 
 .style_box {
   position: relative;
@@ -324,15 +366,6 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
   width: 75px;
   display: inline-block; }
 
-.navigation_button {
-  display: block;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  bottom: 0px;
-  left: 48%;
-  cursor: pointer; }
-
 .vertical_middle {
   position: relative;
   top: 30%;
@@ -370,18 +403,6 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 nav {
   text-align: center;
   height: 100px; }
-
-.home-logo {
-  padding-top: 100px;
-  width: 550px;
-  margin: 0 auto;
-  display: inline-block; }
-
-#map {
-  height: 80%;
-  width: 70%;
-  margin: 0 auto;
-  cursor: pointer; }
 
 .brew-container h1 {
   text-align: center; }
@@ -475,7 +496,8 @@ nav {
   background-color: white; }
 
 .center_wrapper {
-  width: 970px;
+  max-width: 970px;
+  width: 100%;
   margin: 0 auto; }
 
 .brewery_wrapper {
@@ -589,18 +611,6 @@ div.beer-route:hover h3, div.brewery-route:hover h3 {
   background-color: #67809F;
   color: white; }
 
-#login-form {
-  display: none;
-  width: 300px;
-  color: white;
-  position: absolute;
-  background-color: #67809F;
-  border: 2px solid black;
-  border-radius: 10px;
-  top: 300px;
-  left: 550px;
-  padding: 10px; }
-
 #review-form {
   display: none;
   width: 200px;
@@ -632,29 +642,42 @@ svg text {
   fill: white; }
 
 /*MOBILE STYLING*/
+@media (max-width: 875px) {
+  .home-section {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 400px;
+    border-left: none; }
+
+  .vertical_middle {
+    min-width: 625px;
+    transform: translateY(0); }
+
+  .home-section:first-child {
+    margin: 0 auto; }
+    .home-section:first-child h3 {
+      display: inline-block; }
+    .home-section:first-child button:first-child {
+      display: inline-block;
+      margin-top: 0; }
+    .home-section:first-child button {
+      display: inline-block; } }
 @media only screen and (max-device-width: 1000px) and (orientation: portrait) {
   .home-background {
     height: 80vh; }
     .home-background .home-logo {
       width: 800px; }
-    .home-background #sign-up-form {
-      top: 20%;
-      left: 20%; }
-    .home-background #login-form {
-      top: 40%;
-      left: 40%; }
 
   .center_wrapper {
     width: 100vw; }
     .center_wrapper .home-section {
-      margin: 0 auto;
-      display: block;
       border: none; }
 
   .map_wrapper {
     height: 800px; }
     .map_wrapper #map {
-      width: 100%;
+      width: 1000px;
       height: 100%; }
     .map_wrapper svg {
       margin-top: -75px; }

@@ -1,3 +1,22 @@
+/*Sass variables/mixins/etc.*/
+.home-section-size {
+	height: 100vh;
+	max-height: 800px;
+	min-height: 675px;
+}
+
+@mixin absolute-center($width, $position) {
+	position: $position;
+	left: 50%;
+	margin-left: -($width/2);
+	width: $width;
+}
+
+
+
+
+
+/*Start of standard Styling*/
 .nav-container{
 	width: 1100px;
 	margin: 0 auto;
@@ -97,7 +116,7 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 	background-position: center center;
 	background-attachment: fixed;
 	color: white;
-	height: 100vh;
+	@extend .home-section-size;
 }
 
 .home-background .center_wrapper{
@@ -107,6 +126,11 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 
 .home-background .home-logo {
 	display: block;
+	width: 90%;
+	max-width: 400px;
+	height: auto;
+	padding-top: 100px;
+	margin: 0 auto;
 }
 
 .home-background h3{
@@ -115,26 +139,26 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 
 #sign-up-form{
 	display: none;
-	position: absolute;
 	z-index: 1;
 	top: 100px;
-	left: 500px;
+	@include absolute-center(400px, absolute);
 }
 
-#login-success{
-	width: 400px;
+#login-form{
 	display: none;
-	position: fixed;
-	top: 0;
-	left: 40%;
+	color: white;
+	background-color: #67809F;
+	border: 2px solid black;
+	border-radius: 10px;
+	top: 300px;
+	padding: 10px;
+	@include absolute-center(300px, absolute);
 }
 
-#login-error {
-	width: 400px;
+#login-error, #login-success {
 	display: none;
-	position: fixed;
 	top: 0;
-	left: 40%;
+	@include absolute-center(400px, fixed);
 }
 
 .home-section{
@@ -195,12 +219,27 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 	margin-bottom: 0;
 } 
 
+.navigation_button {
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	cursor: pointer;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+/*Map section Home Page*/
 .map_wrapper{
 	position: relative;
 	width: 100%;
 	text-align: center;
 	padding-top: 50px;
-	height: 100vh;
+	@extend .home-section-size;
 	background-image: url('/images/hop-farm.png');
 	background-size: cover;
 	background-position: center center;
@@ -208,6 +247,15 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 	color: white;
 }
 
+#map {
+	height: 80%;
+	width: 90%;	
+	max-width: 1100px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+/*Style section Home Page*/
 .style_wrapper {
 	background-image: url('/images/biergarten-night.png');
 	background-size: cover;
@@ -216,7 +264,11 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 	text-align: center;
 	padding-top: 50px;
 	background-color: white;
-	height: 100vh;
+	@extend .home-section-size;
+}
+
+.center_wrapper.verticle_middle {
+	min-width: 725px;
 }
 
 .style_box {
@@ -386,17 +438,6 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 	display: inline-block;
 }
 
-
-.navigation_button {
-	display: block;
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	bottom: 0px;
-	left: 48%;
-	cursor: pointer;
-}
-
 .vertical_middle {
 	position: relative;
 	top: 30%;
@@ -440,22 +481,6 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
 nav{
 	text-align: center;
 	height: 100px;
-}
-
-
-.home-logo{
-	padding-top: 100px;
-	width: 550px;
-	margin: 0 auto;
-	display: inline-block;
-}
-
-
-#map {
-	height: 80%;
-	width: 70%;	
-	margin: 0 auto;
-	cursor: pointer;
 }
 
 
@@ -580,7 +605,8 @@ nav{
 }
 
 .center_wrapper {
-	width: 970px;
+	max-width: 970px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -719,20 +745,6 @@ div.beer-route:hover h3, div.brewery-route:hover h3{
 	color: white;
 }
 
-
-#login-form{
-	display: none;
-	width: 300px;
-	color: white;
-	position: absolute;
-	background-color: #67809F;
-	border: 2px solid black;
-	border-radius: 10px;
-	top: 300px;
-	left: 550px;
-	padding: 10px;
-}
-
 #review-form{
 	display: none;
 	width: 200px;
@@ -777,6 +789,35 @@ svg text{
 
 /*MOBILE STYLING*/
 
+@media (max-width: 875px) {
+	.home-section{
+		display: block;
+		margin: 0 auto;
+		height: auto;
+		width: 400px;
+		border-left: none;
+	}
+
+	.vertical_middle {
+		min-width: 625px;
+		transform: translateY(0);
+	}
+
+	.home-section:first-child {
+		margin: 0 auto;
+		h3 {
+			display: inline-block;
+		}
+		button:first-child {
+			display: inline-block;
+			margin-top: 0;
+		}
+		button {
+			display: inline-block;
+		}
+	}
+}
+
 @media only screen 
 and (max-device-width : 1000px) 
 and (orientation : portrait) {
@@ -787,21 +828,11 @@ and (orientation : portrait) {
 		.home-logo {
 			width: 800px;
 		}
-		#sign-up-form {
-			top: 20%;
-			left: 20%;
-		}
-		#login-form {
-			top: 40%;
-			left: 40%;
-		}
 	}
 
 	.center_wrapper {
 		width: 100vw;
 		.home-section {
-			margin: 0 auto;
-			display: block;
 			border: none;
 		}
 	}
@@ -809,7 +840,7 @@ and (orientation : portrait) {
 	.map_wrapper {
 		height: 800px;
 		#map {
-			width: 100%;
+			width: 1000px;
 			height: 100%;
 		}
 		svg {
