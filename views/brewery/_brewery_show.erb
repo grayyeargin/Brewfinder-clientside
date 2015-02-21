@@ -3,9 +3,24 @@
   <%= erb :"navigation/_page_navigation" %>
 
 	<div class="sticky-brewery-background">
-		<div class="profile-image" style="background-image: url(<%%= image %>)"></div>
-		<h1><%%= name %></h1></br>
-		<span class="brewery-location"><i><%%= location %></i></span>
+    <div class="center_wrapper">
+      <div id="brew-image" class="brew-profile-info col-xs-0 col-md-3">
+        <img class="profile-image-img" src="<%%= image %>" alt="">
+      </div>
+      <div class="brew-profile-info col-xs-8 col-md-6">
+        <h1><%%= name %></h1></br>
+        <p class="brewery-location">Website:&nbsp;<i><a href="<%%= url %>"><%%= url %></a></i></p>
+        <p class="brewery-location">Phone:&nbsp;<i><%%= phone_number %></i></p>
+        <p class="brewery-location">Total on Tap: &nbsp;<i><%%= beer_selection.length %></i></p>
+      </div>
+      <div id="brew-address" class="brew-profile-info col-xs-4 col-md-3">
+        <div id="leaflet">
+
+        </div>
+        <p><%%= address.split(',')[0] %></br>
+        <%%= address.split(',')[1] %><%%= address.split(',')[2] %></p>
+      </div>
+    </div>
 	</div>
 	
 
@@ -29,3 +44,5 @@
   </table>
 	
 </script>
+
+<div></div>

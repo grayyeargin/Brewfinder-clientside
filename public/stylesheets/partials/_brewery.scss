@@ -1,0 +1,51 @@
+.sticky-brewery-background{
+	background-image: url('/images/brewery_show.png');
+	background-size: cover;
+	height: 300px;
+	background-position: center center;
+	background-attachment: fixed;
+	box-shadow: inset 0em 0em 1em #111;
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.sticky-brewery-background h1{
+	margin-bottom: 2px;
+}
+
+
+.profile-image-img {
+	float: left;
+	margin: 60px auto 0 auto;
+	object-fit: cover;
+	max-width: 100%;
+	height: 150px;
+	border: 2px solid white;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.brew-profile-info {
+	p {
+		text-align: left;
+	}
+}
+
+#brew-address {
+	p {
+		width: 300px;
+	}
+}
+
+#leaflet {
+	width: 100%;
+	height: 150px;
+	background-color: green;
+}
+
+@media (max-width: 995px) {
+	#brew-image {
+		display: none;
+	}
+}

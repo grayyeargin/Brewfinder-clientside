@@ -1,0 +1,227 @@
+/*Intro Homepage CSS*/
+.home-background {
+	position: relative;
+	background-image: url('/images/home-background.png');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	color: white;
+	@extend .home-section-size;
+}
+
+.home-background .center_wrapper{
+	position: relative;
+	top: 10%;
+}
+
+.home-background .home-logo {
+	display: block;
+	width: 90%;
+	max-width: 400px;
+	height: auto;
+	padding-top: 100px;
+	margin: 0 auto;
+}
+
+.home-background h3{
+	text-align: center;
+}
+
+#sign-up-form{
+	display: none;
+	z-index: 1;
+	top: 100px;
+	@include absolute-center(400px, absolute);
+}
+
+#login-form{
+	display: none;
+	color: white;
+	background-color: #67809F;
+	border: 2px solid black;
+	border-radius: 10px;
+	top: 300px;
+	padding: 10px;
+	@include absolute-center(300px, absolute);
+}
+
+#login-error, #login-success {
+	display: none;
+	top: 0;
+	@include absolute-center(400px, fixed);
+}
+
+.home-section{
+	vertical-align: top;
+	display: inline-block;
+	height: 300px;
+	width: 300px;
+	border-left: 1px solid white;
+}
+
+.home-section:nth-child(2){
+	width: 500px;
+}
+
+.home-section:first-child h2 {
+	display: inline-block;
+	margin-top: 125px;
+}
+
+.home-section:first-child button:first-child{
+	margin-top: 90px;
+}
+
+.home-section h3{
+	margin: 20px 0;
+}
+
+.home-section:first-child button{
+	display: block;
+	margin: 0 auto;
+}
+
+.home-search{
+	margin: 100px 0 0 100px;
+}
+
+.home-section input{
+	width: 300px;	
+	height: 40px;
+}
+
+.home-section:nth-child(2) button {
+	width: 100px;
+	display: inline-block;
+}
+
+.beer_button {
+	margin: 0 20px 0 30px;
+}
+
+.home-section:first-child{
+	border: none;
+	margin-left: 60px;
+	text-align: center;
+}
+
+.home-section .form-group {
+	margin-bottom: 0;
+} 
+
+.navigation_button {
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	cursor: pointer;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+/*Map section Home Page*/
+.map_wrapper{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	padding-top: 50px;
+	@extend .home-section-size;
+	background-image: url('/images/hop-farm.png');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	color: white;
+}
+
+#map {
+	height: 80%;
+	width: 90%;	
+	max-width: 1100px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+/*Style section Home Page*/
+.style_wrapper {
+	background-image: url('/images/biergarten-night.png');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	text-align: center;
+	padding-top: 50px;
+	background-color: white;
+	@extend .home-section-size;
+	.vertical_middle {
+		margin: 100px auto;
+	}
+}
+
+.style_box {
+	position: relative;
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	margin: 10px;
+	vertical-align: top;
+	cursor: pointer; 
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0em 0em 2em white;
+	transition: background-color .5s, box-shadow .5s;
+	-webkit-transition: background-color .5s, box-shadow .5s;
+}
+
+.style_box:hover {
+	background-color: #F89406;
+	box-shadow: 0em 0em 3em #F89406;
+}
+
+.style_box h3 {
+	position: absolute;
+	opacity: 1;
+	width: 100%;
+	height: 30%;	
+	overflow: auto;
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+	transition: opacity .5s;
+	-webkit-transition: opacity .5s;
+}
+
+.style_box:hover h3 {
+	opacity: 0;
+}
+
+.style_box .style_box_info {
+	position: absolute;
+	color: white;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	display: table; 
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+}
+
+.style_box_info p {
+	padding: 5px;
+	display: table-cell; 
+	vertical-align: middle; 
+	text-align: center; 
+}
+
+.style_box:hover .style_box_info {
+	opacity: 1;
+}
+
+.underline_header {
+	text-align: center;
+	margin: 0 auto;	
+	color: white;
+	width: 500px;
+	border-bottom: solid 1px white;
+}
