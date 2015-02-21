@@ -221,9 +221,8 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
   text-align: center;
   padding-top: 50px;
   background-color: white; }
-
-.center_wrapper.verticle_middle {
-  min-width: 725px; }
+  .style_wrapper .vertical_middle {
+    margin: 100px auto; }
 
 .style_box {
   position: relative;
@@ -365,11 +364,6 @@ table a:not(.btn):hover, .table a:not(.btn):hover {
   height: 75px;
   width: 75px;
   display: inline-block; }
-
-.vertical_middle {
-  position: relative;
-  top: 30%;
-  transform: translateY(-30%); }
 
 .sticky-brewery-background {
   background-image: url("/images/brewery_show.png");
@@ -651,8 +645,7 @@ svg text {
     border-left: none; }
 
   .vertical_middle {
-    min-width: 625px;
-    transform: translateY(0); }
+    min-width: 475px; }
 
   .home-section:first-child {
     margin: 0 auto; }
