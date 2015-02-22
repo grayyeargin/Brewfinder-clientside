@@ -238,10 +238,8 @@
 #brew-address p {
   width: 300px; }
 
-#leaflet {
-  width: 100%;
-  height: 150px;
-  background-color: green; }
+#map {
+  height: 200px; }
 
 @media (max-width: 995px) {
   #brew-image {

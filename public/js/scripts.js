@@ -182,7 +182,14 @@ function searchBreweries(){
 	})
 }
 
-
+function createLeafletMap(lat, long) {
+	var map = L.map('map').setView([lat, long], 13);
+	L.tileLayer('https://{s}.tiles.mapbox.com/v4/grayyeargin.l9f0hgel/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3JheXllYXJnaW4iLCJhIjoiR2IxakNJZyJ9.kOAUZRZaO-juIFHNSReEdA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18
+	}).addTo(map);
+	var marker = L.marker([lat, long]).addTo(map);
+}
 
 
 // DOCUMENT READY

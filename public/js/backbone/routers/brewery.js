@@ -49,6 +49,7 @@ var BreweryRouter = Backbone.Router.extend({
 				console.log(brewery);
 				var view = new BreweryProfileView({ model: brewery });
 				that.setView(view);
+				createLeafletMap(brewery.attributes.latitude, brewery.attributes.longitude);
 			}
 		})
 	}
