@@ -1,11 +1,25 @@
 <div class="container navcolor">
 	<nav class="nav-container navbar">
 		<a href="#"><img src="/images/brewfinder-small-logo-invert.png" alt="" class="home-logo-small grow-rotate"></a>
-		<ul class="nav-links">
+		<ul id="large-nav" class="nav-links hidden-xs hidden-sm">
 			<a href="#"><li class="glow">Home</li></a>
 			<%% if (currentUser) { %>
 				<a href="/#users/<%%= currentUser.id %>"><li class="glow">Profile</li></a>
 			<%% } %>
+		</ul>
+
+		<ul id="small-nav" class="hidden-md hidden-lg">
+			<li role="presentation" class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+		      Dropdown <span class="caret"></span>
+		    </a>
+		    <ul class="dropdown-menu" role="menu">
+		     	<a href="#"><li>Home</li></a>
+					<%% if (currentUser) { %>
+						<a href="/#users/<%%= currentUser.id %>"><li>Profile</li></a>
+					<%% } %>
+		    </ul>
+		  </li>
 		</ul>
 
 		<div class="navbar-form search-form" role="search">
