@@ -171,7 +171,7 @@ function breweryMap(){
 
 	var brewery_map = new Datamap({
 	  scope: 'usa',
-	  element: document.getElementById('map'),
+	  element: document.getElementById('usmap'),
 	  fills: {
 	    VERYHIGH: '#0d4e66',
 	  	HIGH: '#34778c',

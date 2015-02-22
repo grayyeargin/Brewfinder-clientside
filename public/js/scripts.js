@@ -143,7 +143,7 @@ function scrollHomePage(){
 
 
 function mapBrewerySearch(){
-	$('#map').on('click', function(e){
+	$('#usmap').on('click', function(e){
 		var state = $('.hoverinfo strong').text();
 		breweryRouter.navigate("#breweries/search/" + state, {trigger: true});
 	})

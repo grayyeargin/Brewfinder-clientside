@@ -128,7 +128,7 @@
   background-attachment: fixed;
   color: white; }
 
-#map {
+#usmap {
   height: 80%;
   width: 90%;
   max-width: 1100px;
@@ -689,7 +689,7 @@ svg text {
 
   .map_wrapper {
     height: 800px; }
-    .map_wrapper #map {
+    .map_wrapper #usmap {
       width: 1000px;
       height: 100%; }
     .map_wrapper svg {
