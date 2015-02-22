@@ -1,6 +1,6 @@
 var beerList = new BeerList(), beerRouter;
 var breweryList = new BreweryList(), breweryRouter;
-var currentUser;
+var currentUser = sessionStorage.current_user ? JSON.parse(sessionStorage.current_user):undefined;
 
 function loginForm(){
 	$('#login-btn').click(function(){
@@ -40,10 +40,8 @@ function loginSubmit(){
 				} else {
 					$('#login-error').slideDown('slow').delay(2000).slideUp('slow');
 				}
-				console.log("it worked");
-				console.log(data.current_user);
+				sessionStorage.current_user = JSON.stringify(data.current_user);
 				currentUser = data.current_user;
-				// userRouter.navigate("#users/" + data.current_user.id, {trigger: true});
 			}
 		})
 	})
@@ -185,7 +183,7 @@ function searchBreweries(){
 function createLeafletMap(lat, long) {
 	var map = L.map('map').setView([lat, long], 13);
 	L.tileLayer('https://{s}.tiles.mapbox.com/v4/grayyeargin.l9f0hgel/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3JheXllYXJnaW4iLCJhIjoiR2IxakNJZyJ9.kOAUZRZaO-juIFHNSReEdA', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18
 	}).addTo(map);
 	var marker = L.marker([lat, long]).addTo(map);
