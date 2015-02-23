@@ -4,6 +4,81 @@
   max-height: 800px;
   min-height: 675px; }
 
+.link-style a, .nav-settings a, #small-nav a, #large-nav a {
+  color: #fff;
+  text-decoration: none; }
+.link-style a:hover, .nav-settings a:hover, #small-nav a:hover, #large-nav a:hover {
+  color: #df691a; }
+
+.nav-settings, #small-nav, #large-nav {
+  list-style: none;
+  float: left;
+  display: inline-block; }
+
+#small-nav {
+  margin-top: 10px; }
+  #small-nav .glyphicon {
+    height: 30px;
+    width: 30px;
+    font-size: 30px; }
+  #small-nav .dropdown-menu {
+    margin-top: 0;
+    background-color: #2b3e50; }
+  #small-nav li {
+    padding: 10px; }
+  #small-nav li:hover {
+    background-color: #4e5d6c; }
+
+#large-nav {
+  height: inherit;
+  margin: 0 0 0 10px;
+  padding: 0; }
+  #large-nav li {
+    padding: 25px;
+    font-size: 15px;
+    display: inline-block; }
+  #large-nav li:hover {
+    background-color: #4e5d6c; }
+
+.nav-container .home-logo-small {
+  float: left;
+  margin-top: 20px;
+  padding-right: 20px;
+  width: 250px; }
+
+#nav-search-form {
+  margin: 0;
+  padding: 0;
+  width: 270px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-block; }
+  #nav-search-form .form-group {
+    width: 150px;
+    display: inline-block;
+    float: left; }
+    #nav-search-form .form-group input {
+      width: 180px; }
+  #nav-search-form button {
+    float: right;
+    margin: 0; }
+
+/*Ian Lunn CSS Hover*/
+.grow-rotate {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent; }
+
+.grow-rotate:hover, .grow-rotate:focus, .grow-rotate:active {
+  -webkit-transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(4deg); }
+
 /*Intro Homepage CSS*/
 .home-background {
   position: relative;
@@ -239,7 +314,8 @@
   width: 300px; }
 
 #map {
-  height: 200px; }
+  height: 200px;
+  min-width: 200px; }
 
 @media (max-width: 995px) {
   #brew-image {
@@ -257,68 +333,6 @@ table a:not(.btn), .table a:not(.btn) {
 
 table a:not(.btn):hover, .table a:not(.btn):hover {
   color: white; }
-
-.nav-container .home-logo-small {
-  float: left;
-  margin-top: 20px;
-  padding-right: 20px;
-  width: 250px; }
-
-.nav-container button {
-  margin-bottom: 8px; }
-
-.nav-container .search-form {
-  top: 5px;
-  right: 20px; }
-
-.nav-container ul {
-  float: left;
-  padding-left: 0;
-  margin: 0;
-  margin-top: 20px; }
-
-#large-nav {
-  display: inline-block; }
-
-.nav-container li {
-  display: inline-block;
-  margin-right: 20px;
-  padding: 10px 20px;
-  border: 1px solid #ecf0f1;
-  border-radius: 5px;
-  background-color: none;
-  transition: background-color .5s ease-in-out; }
-
-.nav-container li:hover {
-  background-color: #2ecc71; }
-
-/*Ian Lunn CSS Hover*/
-.glow {
-  display: inline-block;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px transparent; }
-
-.glow:hover, .glow:focus, .glow:active {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); }
-
-.grow-rotate {
-  display: inline-block;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px transparent; }
-
-.grow-rotate:hover, .grow-rotate:focus, .grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg); }
 
 .brew-container {
   margin: 0px auto;
@@ -582,18 +596,6 @@ div.beer-route:hover h3, div.brewery-route:hover h3 {
 .search-statement {
   width: 800px;
   margin: 0 auto; }
-
-.search-form {
-  position: absolute;
-  top: 15px;
-  right: 20px; }
-
-.search-form button {
-  margin-top: 10px;
-  width: 85px; }
-
-.search-form .brewery_button {
-  margin-left: 8px; }
 
 .piechart {
   width: 100%;

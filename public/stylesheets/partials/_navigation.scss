@@ -1,0 +1,91 @@
+.nav-settings {
+	list-style: none;
+	float: left;
+	@extend .link-style;
+	display: inline-block;
+}
+
+#small-nav {
+	@extend .nav-settings;
+	margin-top: 10px;
+	.glyphicon {
+		height: 30px;
+		width: 30px;
+		font-size: 30px;
+	}
+	.dropdown-menu {
+		margin-top: 0;
+		background-color: #2b3e50;
+	}
+	li {
+		padding: 10px;
+	}
+	li:hover {
+		background-color: #4e5d6c;
+	}
+}
+
+#large-nav {
+	height: inherit;
+	@extend .nav-settings;
+	margin: 0 0 0 10px;
+	padding: 0;
+	li {
+		padding: 25px;
+		font-size: 15px;
+		display: inline-block;
+	}
+	li:hover {
+		background-color: #4e5d6c;
+	}
+
+}
+
+
+.nav-container {
+	.home-logo-small {
+		float: left;
+		margin-top: 20px;
+		padding-right: 20px;
+		width: 250px;
+	}
+}
+
+#nav-search-form {
+	margin: 0;
+	padding: 0;
+	width: 270px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	display: inline-block;
+	.form-group{
+		width: 150px;
+		display: inline-block;
+		float: left;
+		input {
+			width: 180px;
+		}
+	}
+	button {
+		float: right;
+		margin: 0;
+	}
+}
+
+
+/*Ian Lunn CSS Hover*/
+.grow-rotate {
+	display: inline-block;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.grow-rotate:hover, .grow-rotate:focus, .grow-rotate:active {
+	-webkit-transform: scale(1.1) rotate(4deg);
+	transform: scale(1.1) rotate(4deg);
+}
