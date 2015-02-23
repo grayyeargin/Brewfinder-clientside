@@ -473,6 +473,9 @@ svg text{
 
 	.home-section:first-child {
 		margin: 0 auto;
+		h2 {
+			margin-top: 0;
+		}
 		h3 {
 			display: inline-block;
 		}

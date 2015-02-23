@@ -82,6 +82,14 @@ function signUpSubmit(){
 	})
 }
 
+function logOut() {
+	$('body').on('click', '.logout', function(){
+		sessionStorage.removeItem('current_user');
+		currentUser = undefined;
+		beerRouter.navigate("", {trigger: true});
+	});
+}
+
 function alreadyLiked(beer){
 	currentUser.likes.forEach(function(like){
 		if (like.id == beer.id) {
@@ -212,6 +220,7 @@ $(function(){
 
 	searchBar();
 	searchBreweries();
+	logOut();
 
 });
 

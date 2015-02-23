@@ -6,7 +6,6 @@ var BeerRouter = Backbone.Router.extend({
 
 	routes: {
 		""																: "homepage",
-		"beers" 													: "chart",
 		"beers/:id"												: "show",
 		"beers/:id/edit"									: "edit",
 		"home" 														: "homepage",
@@ -21,17 +20,6 @@ var BeerRouter = Backbone.Router.extend({
 		window.scrollTo(0, 0);
 		this.view = view;
 		this.$el.html(this.view.render().$el);
-	},
-	chart: function(){
-		if (this.view) {
-			this.view.remove();
-			this.$el.empty();
-			this.view = null;
-		}
-		window.scrollTo(0, 0);
-		var view = _.template($('#beer-piechart-template').html());
-		this.$el.html(view);
-		fluxSlider();
 	},
 	index: function() {
 		var view = new BeerListView({collection: this.collection });
@@ -78,7 +66,7 @@ var BeerRouter = Backbone.Router.extend({
 				data_info = styleInfo.attributes.abv_info
 				var view = new StyleView({model: styleInfo});
 				that.setView(view);
-				barChart(data_info)
+				barChart(data_info);
 			}
 		})
 	},

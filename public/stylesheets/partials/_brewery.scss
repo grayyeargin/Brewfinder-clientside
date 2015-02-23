@@ -16,7 +16,7 @@
 
 .profile-image-img {
 	float: left;
-	margin: 40px auto 0 auto;
+	margin: 30px auto 0 auto;
 	object-fit: cover;
 	max-width: 100%;
 	height: auto;
@@ -33,6 +33,7 @@
 }
 
 #brew-address {
+	margin-top: 30px;
 	p {
 		width: 300px;
 	}

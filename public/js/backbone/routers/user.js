@@ -12,6 +12,7 @@ var UserRouter = Backbone.Router.extend({
 			this.view.remove();
 			this.view = null;
 		}
+		window.scrollTo(0, 0);
 		this.view = view;
 		this.$el.html(this.view.render().$el);
 	},

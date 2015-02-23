@@ -298,7 +298,7 @@
 
 .profile-image-img {
   float: left;
-  margin: 40px auto 0 auto;
+  margin: 30px auto 0 auto;
   object-fit: cover;
   max-width: 100%;
   height: auto;
@@ -310,8 +310,10 @@
 .brew-profile-info p {
   text-align: left; }
 
-#brew-address p {
-  width: 300px; }
+#brew-address {
+  margin-top: 30px; }
+  #brew-address p {
+    width: 300px; }
 
 #map {
   height: 200px;
@@ -669,6 +671,8 @@ svg text {
 
   .home-section:first-child {
     margin: 0 auto; }
+    .home-section:first-child h2 {
+      margin-top: 0; }
     .home-section:first-child h3 {
       display: inline-block; }
     .home-section:first-child button:first-child {
