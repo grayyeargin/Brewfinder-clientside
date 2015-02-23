@@ -9,7 +9,7 @@ var BeerList = Backbone.Collection.extend({
 
 var BreweryList = Backbone.Collection.extend({
 	model: Brewery,
-	url: 'http://localhost:3000/api/breweries'
+	url: 'http://104.236.65.119:3000/api/breweries'
 });
 
 
