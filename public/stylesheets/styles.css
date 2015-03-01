@@ -488,7 +488,8 @@ nav {
   display: block; }
 
 .liked-header {
-  margin-left: 20%; }
+  margin-left: 20%;
+  clear: both; }
 
 .brewery-icon {
   width: 250px;
