@@ -322,6 +322,15 @@
 @media (max-width: 995px) {
   #brew-image {
     display: none; } }
+.profile-image-beer {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+  margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 10px;
+  display: block; }
+
 /*Start of standard Styling*/
 .nav-container {
   width: 100%;

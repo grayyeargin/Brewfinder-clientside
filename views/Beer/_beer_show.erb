@@ -3,7 +3,7 @@
 	<%= erb :"navigation/_page_navigation" %>
 
 	<div class="sticky-beer-background">
-		<div class="profile-image" style="background-image: url(<%%= image %>)"></div>
+		<img class="profile-image-beer" src="<%%= image %>">
 		<h1 class="beer-title"><%%= name %></h1>
 		<%% if (currentUser) {%>
 			<button type="button" data-userid="<%%= currentUser.id %>" data-beerid="<%%= id %>" class="btn btn-default like-btn">Like Beer</button>
@@ -54,5 +54,6 @@
 
 
 </script>
-
+<!-- <div class="profile-image" style="background-image: url(<%%= image %>)"></div>
+ -->
 
